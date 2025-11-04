@@ -1,0 +1,223 @@
+# ============================================
+# ARQUIVOS SENSÍVEIS - NUNCA COMMITAR!
+# ============================================
+
+# Variáveis de ambiente (chaves API, senhas, tokens)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Credenciais e configurações sensíveis
+credentials.json
+secrets.json
+config.json
+*.secret
+*.token
+
+# ============================================
+# PYTHON
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================
+# LOGS E ARQUIVOS TEMPORÁRIOS
+# ============================================
+
+# Logs
+*.log
+*.log.*
+server.log
+*.out
+*.err
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+.DS_Store
+
+# ============================================
+# IDEs E EDITORES
+# ============================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# SISTEMA OPERACIONAL
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# ARQUIVOS DE TESTE E DESENVOLVIMENTO LOCAL
+# ============================================
+
+# Scripts de teste temporários
+test_*.py
+test_smtp_detailed.py
+verificar_sendgrid.py
+test-chat.html
+
+# Arquivos de documentação local
+CHATKIT_SETUP_COMPLETO.txt
+
+# Todos os arquivos Markdown (documentação)
+*.md
+README.md
+
+# Scripts de inicialização local
+start.sh
+start-chatkit.sh
+
+# ============================================
+# VERCEL E DEPLOY
+# ============================================
+
+# Arquivos de build da Vercel
+.vercel/
+vercel.json.backup
+
+# Arquivos de cache
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# ============================================
+# NODE.JS (caso use no futuro)
+# ============================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ============================================
+# OUTROS
+# ============================================
+
+# Arquivos de backup
+*.bak
+*.backup
+*.old
+
+# Arquivos comprimidos temporários
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Arquivos de configuração local
+settings.local.json
+.local/
+
+# Arquivos de sessão
+*.session
+*.session.*
+
+# Arquivos de lock
+*.lock
+
+# Arquivos de dump
+*.dump
+*.sql.gz
+
+# Arquivos de imagem temporários (se houver)
+temp_images/
+uploads/

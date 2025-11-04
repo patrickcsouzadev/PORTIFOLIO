@@ -1,0 +1,47 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Testes e scripts locais
+test_*.py
+verificar_*.py
+
+# Arquivos de documentação
+*.md
+!README.md
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Servidor local (não usado na Vercel)
+server.py
+
+# Arquivos estáticos do front-end (hospedado na Hostinger)
+index.html
+static/
+imagens/
