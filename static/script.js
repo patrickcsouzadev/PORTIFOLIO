@@ -315,7 +315,7 @@ function initContactForm() {
             } else {
                 // Em produção, aponta para a API na Vercel
                 // IMPORTANTE: Substitua pela URL do seu deploy na Vercel
-                apiUrl = 'https://SEU-PROJETO.vercel.app';
+                apiUrl = 'https://portioficial.vercel.app';
             }
             
             // Enviar dados para o backend

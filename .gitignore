@@ -221,3 +221,4 @@ settings.local.json
 # Arquivos de imagem temporários (se houver)
 temp_images/
 uploads/
+.vercel
