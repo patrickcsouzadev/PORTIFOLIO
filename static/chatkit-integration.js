@@ -135,13 +135,13 @@
             // Determinar URL da API baseado no ambiente
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
-            let apiUrl = '';
+            let apiUrl = 'portifolio-eta-five-94.vercel.app';
 
             if (hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:') {
                 apiUrl = 'http://localhost:8000';
             } else {
                 // Em produção na Vercel, usa URL relativa (mesmo domínio)
-                apiUrl = window.location.origin;
+                apiUrl = portifolio-eta-five-94.vercel.app;
             }
 
             const response = await fetch(`${apiUrl}/api/chat`, {

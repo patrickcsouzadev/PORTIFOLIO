@@ -306,7 +306,7 @@ function initContactForm() {
             // Determinar URL da API
             // Se estiver rodando localmente (file:// ou localhost), usa porta 8000
             // Caso contrário, usa URL relativa (mesmo domínio)
-            let apiUrl = '';
+            let apiUrl = 'portifolio-eta-five-94.vercel.app';
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
 
@@ -314,7 +314,7 @@ function initContactForm() {
                 apiUrl = 'http://localhost:8000';
             } else {
                 // Em produção na Vercel, usa URL relativa (mesmo domínio)
-                apiUrl = window.location.origin;
+                apiUrl = portifolio-eta-five-94.vercel.app;
             }
             
             // Enviar dados para o backend
