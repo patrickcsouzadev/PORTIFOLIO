@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Cache - Debug</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .test-box {
+            background: #2d2d2d;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        .success {
+            border-color: #4CAF50;
+        }
+        .warning {
+            border-color: #ff9800;
+        }
+        h1 { color: #4CAF50; }
+        h2 { color: #00bcd4; }
+        code {
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #4CAF50;
+        }
+        .version {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        .info {
+            background: #1e3a5f;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Teste de Cache e Versão</h1>
+
+    <div class="test-box success">
+        <h2>✅ Se você está vendo esta página, o HTML foi atualizado!</h2>
+        <p class="version">Versão atual: 2025110401</p>
+        <p>Data de criação: <strong><span id="now"></span></strong></p>
+        <p>Última modificação deste arquivo: <strong>04/11/2025 às 14:35</strong></p>
+    </div>
+
+    <div class="test-box">
+        <h2>📊 Informações do Navegador</h2>
+        <div class="info">
+            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+            <p><strong>URL Atual:</strong> <code id="currentUrl"></code></p>
+            <p><strong>Protocolo:</strong> <span id="protocol"></span></p>
+            <p><strong>Host:</strong> <span id="host"></span></p>
+        </div>
+    </div>
+
+    <div class="test-box">
+        <h2>🧪 Testes de JavaScript</h2>
+        <p id="jsTest">❌ JavaScript não está funcionando</p>
+        <div class="info">
+            <p><strong>Versão do script.js:</strong> <span id="scriptVersion">Verificando...</span></p>
+        </div>
+    </div>
+
+    <div class="test-box warning">
+        <h2>⚠️ Como Interpretar os Resultados</h2>
+        <ul>
+            <li><strong>Se a versão está CORRETA (2025110401):</strong> Cache limpo com sucesso! ✅</li>
+            <li><strong>Se a versão está ANTIGA:</strong> Ainda há cache. Siga o guia abaixo. ⚠️</li>
+        </ul>
+    </div>
+
+    <div class="test-box">
+        <h2>🔧 Ações de Limpeza</h2>
+        <button class="button" onclick="forceReload()">🔄 Hard Reload (Ctrl+F5)</button>
+        <button class="button" onclick="clearCacheData()">🗑️ Limpar Cache Storage</button>
+        <button class="button" onclick="checkScriptVersion()">🔍 Verificar Versão Script</button>
+        <button class="button" onclick="openDevTools()">🛠️ Abrir DevTools</button>
+        <div id="result" style="margin-top: 15px;"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>📝 Checklist de Resolução</h2>
+        <ol>
+            <li>✅ Limpe o cache do navegador (Ctrl+Shift+Del)</li>
+            <li>✅ Faça Hard Refresh (Ctrl+F5)</li>
+            <li>✅ Teste em modo anônimo</li>
+            <li>✅ Verifique se fez upload do index.html na Hostinger</li>
+            <li>✅ Limpe cache da Hostinger no painel</li>
+            <li>✅ Aguarde 2-5 minutos para propagação</li>
+            <li>✅ Teste em dispositivo diferente</li>
+        </ol>
+    </div>
+
+    <script>
+        // Testes básicos
+        document.getElementById('jsTest').innerHTML = '✅ JavaScript está funcionando!';
+        document.getElementById('jsTest').style.color = '#4CAF50';
+
+        // Informações do navegador
+        document.getElementById('now').textContent = new Date().toLocaleString('pt-BR');
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('protocol').textContent = window.location.protocol;
+        document.getElementById('host').textContent = window.location.host;
+
+        // Verificar versão do script
+        function checkScriptVersion() {
+            const scripts = document.querySelectorAll('script[src*="script.js"]');
+            const result = document.getElementById('result');
+
+            if (scripts.length > 0) {
+                const scriptSrc = scripts[0].src;
+                const versionMatch = scriptSrc.match(/v=(\d+)/);
+
+                if (versionMatch) {
+                    const version = versionMatch[1];
+                    document.getElementById('scriptVersion').textContent = version;
+
+                    if (version === '2025110401') {
+                        result.innerHTML = '✅ <strong>Script atualizado!</strong> Versão: ' + version;
+                        result.style.color = '#4CAF50';
+                    } else {
+                        result.innerHTML = '⚠️ <strong>Script desatualizado!</strong> Versão: ' + version + ' (esperado: 2025110401)';
+                        result.style.color = '#ff9800';
+                    }
+                } else {
+                    result.innerHTML = '❌ Não foi possível detectar a versão do script';
+                    result.style.color = '#f44336';
+                }
+            }
+        }
+
+        // Force reload
+        function forceReload() {
+            location.reload(true);
+        }
+
+        // Limpar cache storage
+        async function clearCacheData() {
+            const result = document.getElementById('result');
+            try {
+                // Limpar cache storage API
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(cacheNames.map(name => caches.delete(name)));
+                    result.innerHTML = '✅ Cache Storage limpo! Recarregando...';
+                    result.style.color = '#4CAF50';
+                    setTimeout(() => location.reload(true), 1000);
+                } else {
+                    result.innerHTML = '⚠️ Cache Storage API não disponível neste navegador';
+                    result.style.color = '#ff9800';
+                }
+            } catch (error) {
+                result.innerHTML = '❌ Erro ao limpar cache: ' + error.message;
+                result.style.color = '#f44336';
+            }
+        }
+
+        // Abrir DevTools
+        function openDevTools() {
+            alert('Pressione F12 para abrir o DevTools\n\nDepois:\n1. Vá na aba "Network" (Rede)\n2. Marque "Disable cache"\n3. Recarregue a página (Ctrl+R)\n4. Verifique os arquivos carregados');
+        }
+
+        // Executar verificação automática ao carregar
+        window.addEventListener('load', checkScriptVersion);
+    </script>
+</body>
+</html>
