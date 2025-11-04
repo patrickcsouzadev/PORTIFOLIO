@@ -91,7 +91,6 @@ class ContactRequest(BaseModel):
     mensagem: str
 
 # Health check endpoint - útil para monitoramento
-@app.get("/")
 @app.get("/api")
 def read_root():
     return {
