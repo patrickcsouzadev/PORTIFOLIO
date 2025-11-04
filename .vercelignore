@@ -41,7 +41,12 @@ Thumbs.db
 # Servidor local (não usado na Vercel)
 server.py
 
-# Arquivos estáticos do front-end (hospedado na Hostinger)
-index.html
-static/
-imagens/
+# Arquivos desnecessários
+.htaccess
+update_version.sh
+HOSTINGER_SETUP_COMPLETO.md
+GUIA_DEBUG_CACHE.md
+test-cache.html
+test-chat.html
+start.sh
+start-chatkit.sh

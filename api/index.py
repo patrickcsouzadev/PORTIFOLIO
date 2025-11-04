@@ -14,16 +14,10 @@ app = FastAPI()
 # IMPORTANTE: NÃO use load_dotenv() - Vercel fornece variáveis de ambiente diretamente
 
 # Configurar CORS para permitir requisições do frontend
+# Como agora front e back estão no mesmo domínio, aceita origem própria
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://www.patrickcsouzadev.com.br",
-        "https://patrickcsouzadev.com.br",
-        "https://*.vercel.app",  # Para deploys de preview da Vercel
-        "http://localhost:8000",  # Para testes locais
-        "http://127.0.0.1:8000",
-        "http://localhost:5500",
-    ],
+    allow_origins=["*"],  # Permite qualquer origem (ou especifique seus domínios)
     allow_credentials=True,
     allow_methods=["POST", "GET", "OPTIONS"],
     allow_headers=["*"],

@@ -305,17 +305,16 @@ function initContactForm() {
         try {
             // Determinar URL da API
             // Se estiver rodando localmente (file:// ou localhost), usa porta 8000
-            // Caso contrário, assume que está em produção no mesmo domínio
-            let apiUrl = 'https://portioficial.vercel.app';
+            // Caso contrário, usa URL relativa (mesmo domínio)
+            let apiUrl = '';
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
-            
+
             if (hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:') {
                 apiUrl = 'http://localhost:8000';
             } else {
-                // Em produção, aponta para a API na Vercel
-                // IMPORTANTE: Substitua pela URL do seu deploy na Vercel
-                apiUrl = 'https://portioficial.vercel.app';
+                // Em produção na Vercel, usa URL relativa (mesmo domínio)
+                apiUrl = window.location.origin;
             }
             
             // Enviar dados para o backend
