@@ -135,7 +135,7 @@
             // Determinar URL da API baseado no ambiente
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
-            let apiUrl = '';
+            let apiUrl = 'https://portioficial.vercel.app';
 
             if (hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:') {
                 apiUrl = 'http://localhost:8000';

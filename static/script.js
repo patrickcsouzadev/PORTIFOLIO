@@ -306,7 +306,7 @@ function initContactForm() {
             // Determinar URL da API
             // Se estiver rodando localmente (file:// ou localhost), usa porta 8000
             // Caso contrário, assume que está em produção no mesmo domínio
-            let apiUrl = '';
+            let apiUrl = 'https://portioficial.vercel.app';
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
             
