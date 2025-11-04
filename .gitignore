@@ -155,9 +155,9 @@ test-chat.html
 # Arquivos de documentação local
 CHATKIT_SETUP_COMPLETO.txt
 
-# Todos os arquivos Markdown (documentação)
+# Arquivos Markdown (documentação local - exceto README.md)
 *.md
-README.md
+!README.md
 
 # Scripts de inicialização local
 start.sh
