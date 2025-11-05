@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Build complete'",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/index.py"
+      "src": "api/index.py",
+      "use": "@vercel/python"
     },
     {
-      "source": "/api",
-      "destination": "/api/index.py"
+      "src": "static/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "imagens/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -21,8 +28,16 @@
       "dest": "/api/index.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/imagens/(.*)",
+      "dest": "/imagens/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }
