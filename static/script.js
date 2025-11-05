@@ -353,12 +353,20 @@ function initContactForm() {
             console.error('Erro ao enviar formulário:', error);
             btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erro ao Enviar';
             btn.style.background = 'linear-gradient(45deg, #f44336, #d32f2f)';
-            
+
+            // Determinar mensagem de erro apropriada
+            let errorMessage = 'Erro ao enviar mensagem. Tente novamente mais tarde.';
+            if (error && error.message) {
+                errorMessage = error.message;
+            } else if (typeof error === 'string') {
+                errorMessage = error;
+            }
+
             // Mostrar mensagem de erro
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
             errorDiv.style.cssText = 'color: #f44336; margin-top: 1rem; padding: 1rem; background: rgba(244, 67, 54, 0.1); border: 1px solid rgba(244, 67, 54, 0.3); border-radius: 10px; font-size: 1.3rem;';
-            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${error.message || 'Erro ao enviar mensagem. Tente novamente mais tarde.'}`;
+            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
             form.appendChild(errorDiv);
             
             setTimeout(() => {
