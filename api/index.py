@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
+from typing import Optional
 from openai import OpenAI
 import os
 from datetime import datetime
@@ -86,7 +87,7 @@ class ChatRequest(BaseModel):
 
 class ContactRequest(BaseModel):
     nome: str
-    empresa: str = None
+    empresa: Optional[str] = None
     email: EmailStr
     mensagem: str
 

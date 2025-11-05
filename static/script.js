@@ -325,16 +325,27 @@ function initContactForm() {
                 },
                 body: JSON.stringify({
                     nome: nome,
-                    empresa: empresa || null,
+                    empresa: empresa || "",
                     email: email,
                     mensagem: mensagem
                 })
             });
             
             const data = await response.json();
-            
+
             if (!response.ok) {
-                throw new Error(data.detail || 'Erro ao enviar mensagem');
+                // FastAPI/Pydantic retorna detail como array de objetos em erros de validação
+                let errorMessage = 'Erro ao enviar mensagem';
+                if (data.detail) {
+                    if (Array.isArray(data.detail) && data.detail.length > 0) {
+                        // Erro de validação (422): extrai a mensagem do primeiro erro
+                        errorMessage = data.detail[0].msg || data.detail[0].type || 'Erro de validação';
+                    } else if (typeof data.detail === 'string') {
+                        // Erro simples: usa a string diretamente
+                        errorMessage = data.detail;
+                    }
+                }
+                throw new Error(errorMessage);
             }
             
             // Sucesso
