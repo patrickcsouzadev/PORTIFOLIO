@@ -420,9 +420,19 @@ function initCertificates() {
     const modalNext = document.getElementById('certModalNext');
     let currentModalIndex = 0;
 
-    const CERTS_PER_PAGE = 4; // 2 linhas x 2 colunas
+    // Função para determinar itens por página baseado no tamanho da tela
+    function getCertsPerPage() {
+        const width = window.innerWidth;
+        if (width < 768) {
+            return 1; // Mobile: 1 certificado por página
+        } else {
+            return 4; // Tablet/Desktop: 2x2 grid
+        }
+    }
+
+    let CERTS_PER_PAGE = getCertsPerPage();
     let currentPage = 0;
-    const totalPages = Math.ceil(certificates.length / CERTS_PER_PAGE);
+    let totalPages = Math.ceil(certificates.length / CERTS_PER_PAGE);
 
     // Criar páginas de certificados
     function createPages() {
@@ -546,6 +556,23 @@ function initCertificates() {
         }
     });
 
+    // Reinicializar ao redimensionar
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const newCertsPerPage = getCertsPerPage();
+            if (newCertsPerPage !== CERTS_PER_PAGE) {
+                CERTS_PER_PAGE = newCertsPerPage;
+                totalPages = Math.ceil(certificates.length / CERTS_PER_PAGE);
+                currentPage = 0;
+                createPages();
+                createPagination();
+                goToPage(0);
+            }
+        }, 250);
+    });
+
     // Inicializar
     createPages();
     createPagination();
@@ -611,9 +638,19 @@ function initProjects() {
     const projetoPrev = document.getElementById('projetoPrev');
     const projetoNext = document.getElementById('projetoNext');
 
-    const PROJECTS_PER_PAGE = 4; // 2 linhas x 2 colunas
+    // Função para determinar itens por página baseado no tamanho da tela
+    function getProjectsPerPage() {
+        const width = window.innerWidth;
+        if (width < 768) {
+            return 1; // Mobile: 1 projeto por página
+        } else {
+            return 4; // Tablet/Desktop: 2x2 grid
+        }
+    }
+
+    let PROJECTS_PER_PAGE = getProjectsPerPage();
     let currentPage = 0;
-    const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+    let totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
 
     // Criar páginas de projetos
     function createPages() {
@@ -719,6 +756,23 @@ function initProjects() {
         if (currentPage < totalPages - 1) {
             goToPage(currentPage + 1);
         }
+    });
+
+    // Reinicializar ao redimensionar
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const newProjectsPerPage = getProjectsPerPage();
+            if (newProjectsPerPage !== PROJECTS_PER_PAGE) {
+                PROJECTS_PER_PAGE = newProjectsPerPage;
+                totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+                currentPage = 0;
+                createPages();
+                createPagination();
+                goToPage(0);
+            }
+        }, 250);
     });
 
     // Inicializar
