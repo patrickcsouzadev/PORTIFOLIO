@@ -1,0 +1,902 @@
+/* Aqui eu concentro as variaveis principais de cor e base visual do tema. */
+:root {
+    --obsidian-bg: #000510;
+    --cyan-primary: #0c9ffa;
+    --cyan-dim: #003355;
+    --slate-text: #dae3f5;
+    --slate-dim: #89919d;
+    --green-active: #10b981;
+    --glass-bg: rgba(10, 20, 32, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--obsidian-bg);
+    color: var(--slate-text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Fundo espacial da pagina, com gradiente e camadas animadas. */
+.space-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at bottom, #001d34 0%, #000510 100%);
+    transform: translate3d(0, 0, 0);
+}
+
+.nebula {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    filter: blur(60px);
+    animation: nebula-drift 60s ease-in-out infinite alternate;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.nebula-1 {
+    background: radial-gradient(circle at 30% 30%, rgba(12, 159, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(0, 74, 120, 0.08) 0%, transparent 40%);
+}
+
+.nebula-2 {
+    background: radial-gradient(circle at 70% 70%, rgba(0, 74, 120, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(12, 159, 250, 0.05) 0%, transparent 35%);
+    animation-delay: -20s;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes nebula-drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    100% { transform: translate3d(-50px, 30px, 0) scale(1.1); }
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(1px 1px at 20px 30px,  #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px,  #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 90px 40px,  #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 180px 60px,  #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 220px 150px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.3;
+    animation: twinkle 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.stars-alt {
+    background-size: 380px 380px;
+    animation-delay: -2.5s;
+    opacity: 0.2;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50%       { opacity: 0.55; }
+}
+
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(12, 159, 250, 0), #0c9ffa);
+    filter: drop-shadow(0 0 6px #0c9ffa);
+    animation: shoot-diagonal linear infinite;
+    will-change: transform, opacity;
+    opacity: 0;
+    transform-origin: left center;
+}
+
+@keyframes shoot-diagonal {
+    0% {
+        transform: rotate(35deg) translateX(0) scaleX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+        transform: rotate(35deg) translateX(0) scaleX(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(35deg) translateX(1200px) scaleX(1);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.planet-sphere {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(153, 203, 255, 0.2);
+    background: linear-gradient(135deg, rgba(0, 5, 16, 0.9), rgba(12, 159, 250, 0.1));
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.planet-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(75deg);
+    border: 1px solid rgba(12, 159, 250, 0.15);
+    border-radius: 50%;
+}
+
+.horizon-line {
+    position: absolute;
+    bottom: 10%;
+    left: -10%;
+    width: 120%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(12, 159, 250, 0.3), transparent);
+    filter: blur(1px);
+    transform: perspective(500px) rotateX(20deg);
+}
+
+/* Painel com efeito de vidro para manter o estilo do layout. */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(12, 159, 250, 0.1);
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(12, 159, 250, 0.25);
+    box-shadow: 0 0 30px rgba(12, 159, 250, 0.05);
+}
+
+.corner-bracket::before,
+.corner-bracket::after,
+.corner-bracket-inner::before,
+.corner-bracket-inner::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--cyan-primary);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.corner-bracket::before  { top: 0;    left: 0;  border-top: 2px solid; border-left: 2px solid; }
+.corner-bracket::after   { top: 0;    right: 0; border-top: 2px solid; border-right: 2px solid; }
+.corner-bracket-inner::before { bottom: 0; left: 0;  border-bottom: 2px solid; border-left: 2px solid; }
+.corner-bracket-inner::after  { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
+
+.text-mask-star {
+    background: linear-gradient(135deg, #fff 30%, #99cbff 60%, #0c9ffa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Tipografia estilo terminal usada nos textos principais. */
+.terminal-prose {
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 0.015em;
+    line-height: 1.75;
+    text-shadow: 0 0 8px rgba(12, 159, 250, 0.16);
+}
+
+.terminal-prose p {
+    margin: 0;
+}
+
+.terminal-prose p + p {
+    margin-top: 0.85rem;
+}
+
+.terminal-prose-hero {
+    font-size: 0.95rem;
+    color: rgba(34, 211, 238, 0.92);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.terminal-prose-hero::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(34, 211, 238, 0.95);
+    font-weight: 700;
+}
+
+.terminal-prose-main {
+    font-size: 0.95rem;
+    color: rgba(103, 232, 249, 0.9);
+}
+
+.terminal-prose-main p {
+    position: relative;
+    padding-left: 0.95rem;
+}
+
+.terminal-prose-main p::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(34, 211, 238, 0.95);
+    font-weight: 700;
+}
+
+/* Bloco visual de orbitas da stack de tecnologias. */
+.orbital-ring {
+    border: 1px solid rgba(12, 159, 250, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: orbital-spin 30s linear infinite;
+}
+
+@keyframes orbital-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbital-tech-zone {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.orbital-tech-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 104px;
+    height: 104px;
+    border-radius: 999px;
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    background: radial-gradient(circle at 30% 30%, rgba(12, 159, 250, 0.28), rgba(0, 5, 16, 0.95) 68%);
+    box-shadow:
+        0 0 22px rgba(12, 159, 250, 0.25),
+        inset 0 0 18px rgba(12, 159, 250, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.orbital-tech-core-title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    color: #67e8f9;
+    font-weight: 700;
+}
+
+.orbital-tech-core-sub {
+    margin-top: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 7px;
+    line-height: 1;
+    letter-spacing: 0.24em;
+    color: rgba(148, 163, 184, 0.85);
+}
+
+.tech-orbit-ring {
+    --ring-size: 220px;
+    --spin-duration: 30s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--ring-size);
+    height: var(--ring-size);
+    transform: translate(-50%, -50%) rotate(0deg);
+    border: 1px dashed rgba(12, 159, 250, 0.2);
+    border-radius: 50%;
+    animation: orbit-ring-spin var(--spin-duration) linear infinite;
+}
+
+.tech-orbit-ring.is-reverse {
+    animation-direction: reverse;
+}
+
+.tech-orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(var(--angle)) translateX(calc(var(--ring-size) / 2)) rotate(calc(-1 * var(--angle)));
+    transform-origin: center;
+}
+
+.tech-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    padding: 0;
+    border: 1px solid rgba(12, 159, 250, 0.32);
+    background: rgba(2, 8, 23, 0.9);
+    box-shadow:
+        0 0 0 1px rgba(12, 159, 250, 0.08) inset,
+        0 0 14px rgba(12, 159, 250, 0.2);
+    backdrop-filter: blur(3px);
+    animation: orbit-chip-counter var(--spin-duration) linear infinite reverse;
+}
+
+.tech-orbit-ring.is-reverse .tech-chip {
+    animation-direction: normal;
+}
+
+.tech-logo {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(12, 159, 250, 0.38));
+}
+
+@keyframes orbit-ring-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit-chip-counter {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@media (max-width: 540px) {
+    .orbital-tech-zone {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbital-tech-core {
+        width: 92px;
+        height: 92px;
+    }
+
+    .tech-chip {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tech-logo {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/* Linha de varredura para reforcar o clima de HUD/terminal. */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(12, 159, 250, 0.4), transparent);
+    pointer-events: none;
+    z-index: 2;
+    animation: scanline-move 8s linear infinite;
+}
+
+@keyframes scanline-move {
+    0%   { top: 0%; opacity: 0.4; }
+    10%  { opacity: 0.4; }
+    90%  { opacity: 0.4; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.illustration-mask {
+    mask-image: radial-gradient(ellipse 65% 65% at 55% 45%, black 25%, rgba(0,0,0,0.4) 50%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 65% 65% at 55% 45%, black 25%, rgba(0,0,0,0.4) 50%, transparent 70%);
+    filter: drop-shadow(0 0 30px rgba(12, 159, 250, 0.15));
+}
+
+::-webkit-scrollbar          { width: 6px; }
+::-webkit-scrollbar-track    { background: var(--obsidian-bg); }
+::-webkit-scrollbar-thumb    { background: var(--cyan-dim); }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-primary); }
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Destaque do resultado encontrado na busca. */
+.search-hit-active {
+    outline: 1px solid rgba(148, 239, 255, 0.95);
+    box-shadow:
+        0 0 0 2px rgba(12, 159, 250, 0.28) inset,
+        0 0 24px rgba(12, 159, 250, 0.35);
+    transition: box-shadow 0.2s ease, outline-color 0.2s ease;
+}
+
+#top-nav .top-nav-link.is-active {
+    color: #67e8f9 !important;
+    border-bottom-color: rgba(6, 182, 212, 0.95) !important;
+}
+
+#top-nav .top-nav-link:not(.is-active) {
+    color: #64748b !important;
+    border-bottom-color: transparent !important;
+}
+
+#sidebar-nav .sidebar-nav-link.is-active {
+    color: #22d3ee !important;
+    background-color: rgba(6, 182, 212, 0.12) !important;
+}
+
+#sidebar-nav .sidebar-nav-link:not(.is-active) {
+    color: #475569 !important;
+    background-color: transparent !important;
+}
+
+#mobile-nav .mobile-nav-link.is-active {
+    color: #22d3ee !important;
+}
+
+#mobile-nav .mobile-nav-link:not(.is-active) {
+    color: #64748b !important;
+}
+
+/* Estilo do widget de chat em modo terminal Linux. */
+#chatkit-container {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+#chatkit-container > * {
+    pointer-events: auto;
+}
+
+.chatkit-float-btn {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(12, 159, 250, 0.35);
+    border-radius: 10px;
+    background:
+        linear-gradient(180deg, rgba(4, 18, 34, 0.95), rgba(2, 10, 20, 0.98)),
+        radial-gradient(circle at 20% 20%, rgba(12, 159, 250, 0.22), transparent 45%);
+    color: #79e8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow:
+        0 8px 30px rgba(5, 10, 20, 0.8),
+        0 0 0 1px rgba(17, 231, 255, 0.08) inset,
+        0 0 18px rgba(12, 159, 250, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.chatkit-float-btn .material-symbols-outlined {
+    font-size: 28px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.chatkit-float-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 38px rgba(4, 14, 26, 0.9),
+        0 0 0 1px rgba(29, 231, 255, 0.12) inset,
+        0 0 25px rgba(12, 159, 250, 0.35);
+}
+
+.chatkit-float-btn:active {
+    transform: translateY(0);
+}
+
+.chatkit-float-btn.hidden {
+    opacity: 0;
+    transform: scale(0.92);
+    pointer-events: none;
+}
+
+.chatkit-widget-container {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 6rem;
+    width: min(420px, calc(100vw - 2rem));
+    height: min(620px, 72vh);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 194, 255, 0.35);
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 8% 0%, rgba(0, 165, 226, 0.17), transparent 40%),
+        linear-gradient(180deg, rgba(2, 15, 28, 0.96), rgba(2, 10, 18, 0.99));
+    box-shadow:
+        0 20px 65px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(0, 200, 255, 0.08) inset,
+        0 0 28px rgba(0, 162, 255, 0.18);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(18px) scale(0.97);
+    transform-origin: bottom right;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.chatkit-widget-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        rgba(128, 255, 255, 0.04) 0,
+        rgba(128, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.chatkit-widget-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+}
+
+.chatkit-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.72rem 0.88rem;
+    border-bottom: 1px solid rgba(0, 194, 255, 0.25);
+    background: linear-gradient(180deg, rgba(6, 20, 34, 0.95), rgba(4, 13, 24, 0.95));
+}
+
+.chatkit-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.chatkit-title-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00f593;
+    box-shadow: 0 0 10px rgba(0, 245, 147, 0.8);
+}
+
+.chatkit-header h3 {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: #93e9ff;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.chatkit-header button {
+    border: 1px solid rgba(132, 187, 207, 0.25);
+    background: rgba(5, 14, 26, 0.8);
+    color: #84bacf;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.chatkit-header button .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.chatkit-header button:hover {
+    color: #d1f6ff;
+    border-color: rgba(158, 230, 255, 0.45);
+    background: rgba(7, 22, 40, 0.95);
+}
+
+.chatkit-chat-area {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.9rem 0.9rem 0.4rem;
+    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: #b9f3ff;
+}
+
+.chatkit-chat-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatkit-chat-area::-webkit-scrollbar-track {
+    background: rgba(3, 12, 22, 0.55);
+}
+
+.chatkit-chat-area::-webkit-scrollbar-thumb {
+    background: rgba(44, 176, 222, 0.55);
+    border-radius: 999px;
+}
+
+.chatkit-chat-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(87, 212, 255, 0.65);
+}
+
+.chatkit-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.38rem;
+    animation: chatkit-message-in 0.2s ease;
+}
+
+@keyframes chatkit-message-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chatkit-prefix {
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    color: #44c7de;
+}
+
+.chatkit-message-user .chatkit-prefix {
+    color: #7ff9c9;
+}
+
+.chatkit-line {
+    margin: 0;
+    padding: 0.56rem 0.7rem 0.56rem 0.8rem;
+    border-left: 2px solid rgba(68, 199, 222, 0.75);
+    background: rgba(3, 24, 40, 0.6);
+    color: #d4f6ff;
+    line-height: 1.45;
+    font-size: 0.83rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.chatkit-message-user .chatkit-line {
+    border-left-color: rgba(127, 249, 201, 0.85);
+    background: rgba(4, 34, 40, 0.65);
+    color: #dcfff2;
+}
+
+.chatkit-input-area {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(0, 194, 255, 0.25);
+    background: rgba(2, 11, 20, 0.95);
+    padding: 0.7rem 0.8rem;
+}
+
+.chatkit-form {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.chatkit-input-prefix {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    color: #7ff9c9;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+}
+
+.chatkit-input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid rgba(68, 199, 222, 0.45);
+    background: rgba(5, 20, 33, 0.85);
+    color: #d4f6ff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.82rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatkit-input::placeholder {
+    color: rgba(144, 199, 216, 0.65);
+}
+
+.chatkit-input:focus {
+    border-color: rgba(128, 255, 255, 0.55);
+    box-shadow: 0 0 0 2px rgba(25, 140, 187, 0.17);
+}
+
+#chatkit-widget .chatkit-input,
+#chatkit-widget input.chatkit-input,
+.chatkit-form .chatkit-input {
+    background-color: rgba(5, 20, 33, 0.98) !important;
+    color: #d9f8ff !important;
+    -webkit-text-fill-color: #d9f8ff !important;
+    caret-color: #a8f6ff !important;
+    border-color: rgba(76, 203, 231, 0.72) !important;
+    opacity: 1 !important;
+}
+
+#chatkit-widget .chatkit-input::placeholder,
+.chatkit-form .chatkit-input::placeholder {
+    color: rgba(162, 218, 237, 0.86) !important;
+    opacity: 1 !important;
+}
+
+#chatkit-widget .chatkit-input:focus,
+.chatkit-form .chatkit-input:focus {
+    background-color: rgba(6, 24, 40, 0.99) !important;
+    color: #e6fdff !important;
+    -webkit-text-fill-color: #e6fdff !important;
+    border-color: rgba(149, 240, 255, 0.95) !important;
+    box-shadow: 0 0 0 2px rgba(48, 170, 214, 0.28) !important;
+}
+
+.chatkit-send-btn {
+    border: 1px solid rgba(68, 199, 222, 0.45);
+    background: linear-gradient(180deg, rgba(4, 26, 45, 0.95), rgba(3, 14, 25, 0.95));
+    color: #8befff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    min-width: 58px;
+    height: 34px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.chatkit-send-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(126, 233, 255, 0.75);
+    color: #d4f6ff;
+}
+
+.chatkit-send-btn:active {
+    transform: translateY(0);
+}
+
+.chatkit-send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.chatkit-typing-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.chatkit-typing-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    color: #9adfff;
+    font-size: 0.79rem;
+    background: rgba(3, 24, 40, 0.6);
+    border-left: 2px solid rgba(68, 199, 222, 0.75);
+    padding: 0.55rem 0.7rem 0.55rem 0.8rem;
+}
+
+.chatkit-cursor {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.chatkit-cursor::after {
+    content: "";
+    width: 7px;
+    height: 13px;
+    background: #6eefff;
+    box-shadow: 0 0 8px rgba(110, 239, 255, 0.8);
+    animation: chatkit-cursor-blink 1s steps(1, end) infinite;
+}
+
+@keyframes chatkit-cursor-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #chatkit-container {
+        right: 0.85rem;
+        bottom: 5.5rem;
+    }
+
+    .chatkit-float-btn {
+        width: 52px;
+        height: 52px;
+    }
+
+    .chatkit-widget-container {
+        right: 0.85rem;
+        bottom: 9.6rem;
+        width: calc(100vw - 1.7rem);
+        height: min(560px, 66vh);
+    }
+
+    .chatkit-header h3 {
+        font-size: 0.71rem;
+    }
+
+    .chatkit-input-prefix {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .chatkit-widget-container {
+        height: min(530px, 64vh);
+    }
+
+    .chatkit-send-btn {
+        min-width: 52px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chatkit-widget-container,
+    .chatkit-float-btn,
+    .chatkit-message,
+    .chatkit-cursor::after {
+        transition: none;
+        animation: none;
+    }
+}

@@ -1,0 +1,34 @@
+# Desabilitar cache para HTML
+<FilesMatch "\.(html|htm)$">
+    FileETag None
+    <IfModule mod_headers.c>
+        Header unset ETag
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    </IfModule>
+</FilesMatch>
+
+# Cache curto para JS e CSS (1 hora)
+<FilesMatch "\.(js|css)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </IfModule>
+</FilesMatch>
+
+# Cache longo para imagens (1 semana)
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|ico|webp)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "max-age=604800, public"
+    </IfModule>
+</FilesMatch>
+
+# Habilitar compressão GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
+</IfModule>
+
+# Forçar HTTPS (se necessário)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

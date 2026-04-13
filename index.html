@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+    <title>Patrick Carlos Souza // PERFIL_TECNICO</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "secondary-fixed": "#d3e3ff",
+              "surface-container": "#17202d",
+              "primary-fixed": "#cfe5ff",
+              "surface": "#0a1420",
+              "surface-container-lowest": "#050f1b",
+              "primary-container": "#0c9ffa",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#28313e",
+              "outline": "#89919d",
+              "inverse-primary": "#00629e",
+              "on-secondary-fixed-variant": "#2a486e",
+              "tertiary": "#51d7f3",
+              "on-primary-fixed-variant": "#004a78",
+              "surface-bright": "#303a47",
+              "tertiary-container": "#00a8c2",
+              "secondary": "#abc8f5",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#dae3f5",
+              "on-background": "#dae3f5",
+              "on-error": "#690005",
+              "secondary-container": "#2a486e",
+              "primary-fixed-dim": "#99cbff",
+              "on-primary-container": "#003356",
+              "on-tertiary-fixed": "#001f26",
+              "primary": "#99cbff",
+              "outline-variant": "#3f4852",
+              "on-secondary-fixed": "#001c39",
+              "on-tertiary": "#003640",
+              "secondary-fixed-dim": "#abc8f5",
+              "surface-variant": "#2c3543",
+              "error-container": "#93000a",
+              "surface-dim": "#0a1420",
+              "on-tertiary-container": "#003741",
+              "on-secondary": "#0f3156",
+              "surface-tint": "#99cbff",
+              "on-primary": "#003355",
+              "on-tertiary-fixed-variant": "#004e5c",
+              "surface-container-high": "#212b38",
+              "surface-container-low": "#131c29",
+              "inverse-surface": "#dae3f5",
+              "background": "#000510",
+              "on-secondary-container": "#99b7e3",
+              "tertiary-fixed": "#a9edff",
+              "surface-container-highest": "#2c3543",
+              "tertiary-fixed-dim": "#51d7f3",
+              "on-surface-variant": "#bfc7d4",
+              "on-primary-fixed": "#001d34"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px",
+              "lg": "0px",
+              "xl": "0px",
+              "full": "9999px"
+            },
+            "fontFamily": {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+
+    <link rel="stylesheet" href="static/styles.css?v=20260412-terminal-font2" />
+  </head>
+
+  <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden font-body">
+
+    
+    <!-- Aqui fica o fundo animado da pagina -->
+    <div class="space-container">
+      <div class="nebula nebula-1"></div>
+      <div class="nebula nebula-2"></div>
+      <div class="stars"></div>
+      <div class="stars stars-alt"></div>
+      
+      <div class="shooting-star" style="top: -10%; left: 30%; width: 120px; animation-duration: 4s; animation-delay: 1s;"></div>
+      <div class="shooting-star" style="top: 20%; left: 80%; width: 180px; animation-duration: 7s; animation-delay: 4.5s;"></div>
+      <div class="shooting-star" style="top: 40%; left: 10%; width: 100px; animation-duration: 5s; animation-delay: 8s;"></div>
+      <div class="shooting-star" style="top: 0; left: 60%; width: 220px; animation-duration: 9s; animation-delay: 2s;"></div>
+      <div class="shooting-star" style="top: 70%; left: 90%; width: 150px; animation-duration: 6s; animation-delay: 12s;"></div>
+      
+      <div class="planet-sphere" style="width: 300px; height: 300px; right: -50px; top: 10%; opacity: 0.4;">
+        <div class="planet-ring" style="width: 450px; height: 450px;"></div>
+      </div>
+      <div class="planet-sphere" style="width: 80px; height: 80px; left: 15%; bottom: 25%; opacity: 0.2;"></div>
+      <div class="horizon-line"></div>
+      
+      <div id="starfield" class="absolute inset-0 pointer-events-none"></div>
+    </div>
+
+    
+    <!-- Navegacao do topo -->
+    <nav class="fixed top-0 w-full z-50 border-b border-cyan-500/10 bg-[#000510]/60 backdrop-blur-xl flex justify-between items-center px-8 h-16 shadow-[0_0_40px_rgba(12,159,250,0.05)]">
+      <div class="font-headline font-bold tracking-tighter text-cyan-500">patrickcsouza.dev</div>
+      <div id="top-nav" class="hidden md:flex items-center gap-8 font-headline uppercase tracking-tighter text-sm">
+        <a class="top-nav-link text-cyan-400 border-b-2 border-cyan-500 pb-1 transition-colors" href="#home">INICIO</a>
+        <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#sobre">SOBRE</a>
+        <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#projetos">PROJETOS</a>
+        <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#contato">CONTATO</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="material-symbols-outlined text-slate-500 hover:text-cyan-300 transition-all cursor-pointer">settings_input_component</button>
+        <button class="material-symbols-outlined text-slate-500 hover:text-cyan-300 transition-all cursor-pointer">terminal</button>
+        <a href="#contato" class="bg-primary text-on-primary px-4 py-1 font-headline uppercase tracking-tighter text-sm font-bold transition-all hover:bg-primary-container active:scale-95">FALAR_AGORA</a>
+      </div>
+    </nav>
+
+    
+    <!-- Menu lateral com atalhos de secao -->
+    <aside class="fixed left-0 top-0 h-full w-20 border-r border-cyan-500/10 bg-[#000510]/80 backdrop-blur-2xl flex flex-col items-center pt-20 pb-8 z-40 hidden lg:flex font-label text-[10px] tracking-widest">
+      <div class="mb-12 flex flex-col items-center">
+        <div class="w-10 h-10 bg-surface-container-highest border border-cyan-500/20 mb-2 overflow-hidden">
+          <img src="imagens/fotoptk.jpeg" alt="Patrick Souza" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500" />
+        </div>
+        <span class="text-cyan-500 font-bold">STATUS</span>
+        <span class="text-emerald-400">ATIVO</span>
+      </div>
+      <nav id="sidebar-nav" class="flex flex-col gap-8 flex-1">
+        <a href="#home" class="sidebar-nav-link group flex flex-col items-center gap-1 text-cyan-400 bg-cyan-500/5 p-2">
+          <span class="material-symbols-outlined text-2xl">rocket_launch</span>
+          <span>INICIO</span>
+        </a>
+        <a href="#sobre" class="sidebar-nav-link group flex flex-col items-center gap-1 text-slate-600 hover:text-cyan-300 hover:bg-cyan-500/5 p-2 transition-all">
+          <span class="material-symbols-outlined text-2xl">database</span>
+          <span>SOBRE</span>
+        </a>
+        <a href="#projetos" class="sidebar-nav-link group flex flex-col items-center gap-1 text-slate-600 hover:text-cyan-300 hover:bg-cyan-500/5 p-2 transition-all">
+          <span class="material-symbols-outlined text-2xl">settings_cinematic_blur</span>
+          <span>PROJETOS</span>
+        </a>
+        <a href="#contato" class="sidebar-nav-link group flex flex-col items-center gap-1 text-slate-600 hover:text-cyan-300 hover:bg-cyan-500/5 p-2 transition-all">
+          <span class="material-symbols-outlined text-2xl">explore</span>
+          <span>CONTATO</span>
+        </a>
+      </nav>
+      <div class="mt-auto">
+        <button class="flex flex-col items-center gap-1 text-slate-600 hover:text-cyan-300 transition-all p-2">
+          <span class="material-symbols-outlined text-2xl">lock</span>
+          <span>SEGURANCA</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="min-h-screen pt-16 lg:pl-20 relative flex flex-col">
+
+      
+      <!-- Bloco inicial com apresentacao e busca -->
+      <section id="home" class="relative z-10 min-h-[90vh] flex flex-col justify-center px-12 md:px-24 py-24 border-b border-cyan-500/5 overflow-hidden">
+
+        
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-[55%] h-full opacity-40 md:opacity-70 pointer-events-none z-0">
+          <img src="imagens/imganimada.jpeg" alt="Patrick Carlos Souza"
+               class="w-full h-full object-contain illustration-mask scale-110" />
+        </div>
+
+        
+        <div class="z-10 max-w-4xl relative">
+          <p class="font-label text-cyan-500 text-sm mb-6 tracking-[0.2em]">IDENT_01 // PERFIL_PROFISSIONAL</p>
+
+          <h1 class="font-headline font-bold text-7xl md:text-9xl tracking-tighter uppercase leading-none mb-8">
+            PATRICK<br/>
+            <span class="text-cyan-500/40">ENGINEER</span>
+          </h1>
+
+          
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-10 max-w-lg">
+            <div class="h-[2px] w-12 bg-primary shrink-0"></div>
+            <p class="font-headline text-lg md:text-xl text-secondary font-light tracking-tight italic">
+              Full Stack Engineer // Back-End Specialist
+            </p>
+          </div>
+
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
+            <p class="terminal-prose terminal-prose-hero border-l-2 border-cyan-500/40 pl-6">
+              Desenvolvedor Full Stack com especialização em Back-End — Graduado em Análise e Desenvolvimento de Sistemas pela FATEC Rubens Lara (Santos-SP).
+            </p>
+            <div class="font-label text-[10px] text-slate-500 space-y-1">
+              <p>LAT: -23.9608 | LNG: -46.3339</p>
+              <p>VERSAO_BUILD: 4.2.0_ESTAVEL</p>
+              <p>STACK_TEC: JAVA_SE // SPRING // AWS</p>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="max-w-4xl w-full mt-16 relative z-10">
+          <div class="relative group">
+            <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-primary/40"></div>
+            <div class="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-primary/40"></div>
+            <div class="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-primary/40"></div>
+            <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-primary/40"></div>
+            <div class="flex items-center bg-surface-container-lowest border border-primary/20 focus-within:border-primary focus-within:shadow-[0_0_20px_rgba(12,159,250,0.2)] transition-all duration-300">
+              <div class="pl-6 flex items-center gap-3 text-primary/60 shrink-0">
+                <span class="material-symbols-outlined">terminal</span>
+                <span class="font-label text-sm hidden sm:inline">PATRICK@LINUX:~$</span>
+              </div>
+              <input id="hero-search"
+                     class="flex-1 bg-transparent border-none text-primary placeholder:text-slate-700 font-label text-sm py-5 px-4 focus:ring-0 focus:outline-none"
+                     placeholder="BUSCAR_PROJETOS_OU_STACK..."
+                     type="text"
+                     autocomplete="off" />
+              <div class="pr-6 flex items-center gap-4 shrink-0">
+                <span class="font-label text-[10px] text-slate-600 hidden md:block">BUSCAR</span>
+                <button id="search-btn" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">search</button>
+              </div>
+            </div>
+          </div>
+          
+          <div id="search-hint" class="hidden mt-3 px-2 font-label text-[10px] text-primary/70"></div>
+          <div class="flex gap-6 mt-4 flex-wrap">
+            <span class="text-[10px] font-label text-slate-600">BUSCAS_POPULARES:</span>
+            <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">PYTHON</button>
+            <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">JAVA</button>
+            <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">AWS</button>
+            <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">REACT</button>
+            <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">GESTFREELAS</button>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- Bloco sobre mim e experiencias -->
+      <section id="sobre" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+          
+          <div class="md:col-span-8 glass-panel corner-bracket p-10 flex flex-col justify-between min-h-[400px]" data-search-key="core-systems" tabindex="-1">
+            <div class="flex flex-col md:flex-row gap-8">
+              <div class="flex-grow">
+                <h2 class="font-headline text-4xl font-bold uppercase mb-6 tracking-tighter">CORE_PRINCIPLES</h2>
+                <div class="terminal-prose terminal-prose-main space-y-4 max-w-xl">
+                  <p>💻 Stack Tecnológica: Experiência sólida em Java (Spring Boot) e Python (Django, FastAPI, Flask), além de domínio em HTML5, CSS3, Tailwind CSS, JavaScript (ES6+), MySQL, Git e GitHub. Atuação no desenvolvimento de APIs, sistemas web e aplicações escaláveis.</p>
+                  <p>🚀 Aperfeiçoamento Contínuo: Evoluindo em arquitetura de sistemas, AWS Cloud, DevOps e testes automatizados, com foco em aplicações robustas e de alta performance.</p>
+                  <p>📌 Foco Técnico: Desenvolvimento de back-end orientado a performance, segurança e escalabilidade, aplicando boas práticas como arquitetura em camadas, RESTful APIs e padrões de projeto.</p>
+                </div>
+              </div>
+              <div class="w-48 h-48 relative shrink-0 hidden lg:block">
+                <div class="absolute inset-0 border border-cyan-500/20 rounded-full animate-pulse"></div>
+                <img src="imagens/fotoptk.jpeg" alt="Patrick Carlos Souza" class="w-full h-full object-cover object-top opacity-90 rounded-full" />
+                <div class="absolute -top-2 -right-2 text-[8px] font-label bg-cyan-500 text-black px-1">BIOGRAFIA</div>
+              </div>
+            </div>
+            <div class="mt-12 flex gap-4 flex-wrap">
+              <span class="px-3 py-1 border border-cyan-500/20 text-cyan-500 font-label text-xs">ESPECIALISTA_BACK-END</span>
+              <span class="px-3 py-1 border border-cyan-500/20 text-cyan-500 font-label text-xs">ARQUITETURA_DE_SISTEMAS</span>
+              <span class="px-3 py-1 border border-cyan-500/20 text-cyan-500 font-label text-xs">NATIVO_EM_NUVEM</span>
+            </div>
+          </div>
+
+          
+          <div class="md:col-span-4 glass-panel corner-bracket h-[400px] overflow-hidden flex items-center justify-center relative">
+            <div class="orbital-tech-zone" aria-label="Stack em orbita">
+              <div class="orbital-tech-core">
+                <span class="orbital-tech-core-title">STACK</span>
+                <span class="orbital-tech-core-sub">EM_ORBITA</span>
+              </div>
+
+              <div class="tech-orbit-ring" style="--ring-size: 248px; --spin-duration: 44s;">
+                <div class="tech-orbit-item" style="--angle: 12deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg?v=2" alt="Linux" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 132deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 252deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://img.icons8.com/color/48/amazon-web-services.png?v=2" alt="AWS" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-orbit-ring is-reverse" style="--ring-size: 186px; --spin-duration: 33s;">
+                <div class="tech-orbit-item" style="--angle: 38deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg?v=2" alt="Java" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 158deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 278deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.simpleicons.org/django/0C4B33" alt="Django" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-orbit-ring" style="--ring-size: 132px; --spin-duration: 24s;">
+                <div class="tech-orbit-item" style="--angle: 0deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.simpleicons.org/spring/6DB33F" alt="Spring" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 120deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" loading="lazy" />
+                  </div>
+                </div>
+                <div class="tech-orbit-item" style="--angle: 240deg;">
+                  <div class="tech-chip">
+                    <img class="tech-logo" src="https://cdn.simpleicons.org/git/F05032" alt="Git" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 font-label text-[8px] text-cyan-500/50">SCAN_STACK_TEC_98%</div>
+          </div>
+
+          
+          <div class="md:col-span-4 glass-panel corner-bracket h-[300px] p-6 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-cyan-500 text-4xl">schema</span>
+            <div class="space-y-2">
+              <h3 class="font-headline font-bold text-xl uppercase tracking-tighter">FLUXO_DE_DADOS</h3>
+              <p class="font-body text-sm text-slate-400">Transformando processos de alta latência em fluxos de dados sincronizados e de baixo atrito.</p>
+            </div>
+          </div>
+
+          
+          <div class="md:col-span-8 glass-panel corner-bracket h-[300px] bg-surface-container-lowest/70 p-6 font-label text-xs text-cyan-500/80 overflow-hidden relative border border-cyan-500/10">
+            <div class="scanline"></div>
+            <p class="mb-1">&gt; INICIALIZANDO_DIAGNOSTICO_DO_SISTEMA...</p>
+            <p class="mb-1">&gt; MOTOR_PRINCIPAL: SPRING_BOOT_v3.2</p>
+            <p class="mb-1">&gt; STATUS_DO_BANCO: SINCRONIZADO [POSTGRESQL]</p>
+            <p class="mb-1">&gt; PROVEDOR_CLOUD: AWS_SAO_PAULO</p>
+            <p class="mb-1">&gt; BALANCEADOR_DE_CARGA: ATIVO</p>
+            <p class="mb-1 text-emerald-400">&gt; TODOS_OS_SISTEMAS_OPERACIONAIS.</p>
+            <div class="absolute bottom-6 right-6 text-2xl font-bold opacity-10 uppercase tracking-widest">ENGENHARIA</div>
+          </div>
+        </div>
+
+        
+        <div class="mt-24">
+          <h2 class="font-headline text-5xl md:text-6xl font-bold uppercase mb-20 tracking-tighter">MISSION_HISTORY</h2>
+          <div class="space-y-16">
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+              <div class="md:col-span-3 font-label">
+                <p class="text-cyan-500 text-sm font-bold">MISSAO_01</p>
+                <p class="text-slate-500 text-xs">NOV 2025 &mdash; O MOMENTO</p>
+                <p class="text-slate-600 text-[10px] mt-2">SAO_PAULO_BRASIL // HIBRIDO</p>
+              </div>
+              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-fgv" tabindex="-1">
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">FUNDACAO_GETULIO_VARGAS</h3>
+                    <p class="text-cyan-400 font-label text-sm">ENGENHEIRO_DE_SOFTWARE_FULL_STACK (JAVA_PYTHON)</p>
+                  </div>
+                  <span class="material-symbols-outlined text-slate-700">deployed_code</span>
+                </div>
+                <ul class="font-body text-slate-300 space-y-4 mb-8">
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Arquitetura e desenvolvimento de solucoes com Java (Spring Boot) e Python para integracoes de alta escala, reduzindo fluxos operacionais de meses para minutos.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Integracao segura via OAuth 2.0 com plataformas corporativas (incluindo Salesforce Marketing Cloud), automatizando upload, taxonomia e roteamento inteligente de ativos digitais.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Construcao de pipelines GenAI com OpenAI para geracao em escala de HTML responsivo, SMS, WhatsApp e conteudo informativo, com guardrails e validacoes de regra de negocio.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Orquestracao de automacoes com n8n e Power Automate, evolucao de dashboards internos e praticas de DevOps com Git/GitHub e Docker para deploy seguro e escalavel.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">JAVA</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">SPRING_BOOT</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">PYTHON</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">OPENAI_API</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">OAUTH2</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">N8N</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">POWER_AUTOMATE</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">DOCKER</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+              <div class="md:col-span-3 font-label">
+                <p class="text-cyan-500 text-sm font-bold">MISSAO_02</p>
+                <p class="text-slate-500 text-xs">FEV 2024 &mdash; MAI 2025</p>
+                <p class="text-slate-600 text-[10px] mt-2">SANTOS_SP // PRESENCIAL</p>
+              </div>
+              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-soc" tabindex="-1">
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">SOC</h3>
+                    <p class="text-cyan-400 font-label text-sm">ANALISTA_DE_CREDENCIAMENTO</p>
+                  </div>
+                  <span class="material-symbols-outlined text-slate-700">support_agent</span>
+                </div>
+                <ul class="font-body text-slate-300 space-y-4 mb-8">
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Suporte tecnico especializado a usuarios de sistemas corporativos, elevando usabilidade e eficiencia operacional por meio de atendimento consultivo e resolutivo.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Identificacao, reproducao e reporte estruturado de bugs para o time de desenvolvimento, com apoio em homologacao de melhorias e novas funcionalidades.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Conducao de treinamentos para usuarios finais, documentacao de processos, guias e FAQ para acelerar onboarding e reduzir erros recorrentes.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Intermediacao entre areas de negocio e equipe tecnica, priorizando ajustes com base em impacto operacional e experiencia do usuario.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">SUPORTE_TECNICO</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">QA_FUNCIONAL</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">TREINAMENTO</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">DOCUMENTACAO</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">UX_ANALISE</span>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+              <div class="md:col-span-3 font-label">
+                <p class="text-cyan-500 text-sm font-bold">MISSAO_03</p>
+                <p class="text-slate-500 text-xs">JUN 2022 &mdash; FEV 2024</p>
+                <p class="text-slate-600 text-[10px] mt-2">SANTOS_SP // PRESENCIAL</p>
+              </div>
+              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-gmreis" tabindex="-1">
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">GMREIS</h3>
+                    <p class="text-cyan-400 font-label text-sm">INSPETOR_DE_CONTROLE_E_GARANTIA_DA_QUALIDADE</p>
+                  </div>
+                  <span class="material-symbols-outlined text-slate-700">inventory_2</span>
+                </div>
+                <ul class="font-body text-slate-300 space-y-4 mb-8">
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Inspecao de produtos, servicos e documentacoes com foco em conformidade, rastreabilidade e confiabilidade dos processos de qualidade.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Atuacao em melhoria continua, auditoria e controle de estoque, assegurando aderencia aos requisitos regulatorios e ao sistema de gestao da qualidade.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Responsabilidade por rotinas administrativas, emissao e recebimento de notas fiscais, expedicao de consignado e elaboracao de planilhas gerenciais.
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
+                    Follow-up com clientes e suporte logistico de equipe para manter padrao de excelencia, pontualidade e satisfacao no servico prestado.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">CONTROLE_DE_QUALIDADE</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">AUDITORIA</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">GESTAO_DE_ESTOQUE</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">NOTAS_FISCAIS</span>
+                  <span class="text-[10px] font-label text-slate-500 border border-slate-800 px-2 py-1 bg-black/40">LOGISTICA</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- Bloco com os projetos e links de repositorio -->
+      <section id="projetos" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
+        <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 class="font-label text-primary text-sm tracking-[0.3em] mb-2">// FLUXO_DE_DADOS_PRONTO</h2>
+            <h1 class="font-headline font-extrabold text-6xl tracking-tighter uppercase">ENGINEERING_MODULES</h1>
+          </div>
+          <div class="font-label text-[10px] text-outline flex flex-col items-end">
+            <span>STATUS_DO_SISTEMA: NOMINAL</span>
+            <span>BUFFER_ATIVO: 0x294F_A2</span>
+          </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-l-2 border-primary relative group overflow-hidden" data-search-key="module-cinetracker" tabindex="-1">
+            <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_01</div>
+            <div class="p-8">
+              <h3 class="font-headline text-4xl font-bold tracking-tight mb-4 text-on-surface">CineTracker</h3>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">CATALOGO_DE_FILMES</span>
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">TRACKING_PESSOAL</span>
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">WEB_APP</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <p class="text-on-surface-variant leading-relaxed">
+                  Aplicacao para descoberta e organizacao de filmes, com foco em experiencia de uso, acompanhamento de listas e navegacao por catalogo.
+                </p>
+                <div class="h-48 bg-surface-container-highest/50 relative border border-outline-variant/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-5xl text-cyan-500/20">movie</span>
+                </div>
+              </div>
+              <div class="mt-8 flex gap-4">
+                <a href="https://github.com/patrickcsouzadev/CineTracker" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 font-label text-xs font-bold hover:bg-cyan-400 transition-all">&gt; CODIGO_FONTE</a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md border-t-2 border-primary/20 relative group" data-search-key="module-jobmatchai" tabindex="-1">
+            <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_02</div>
+            <div class="p-8 flex flex-col h-full">
+              <h3 class="font-headline text-2xl font-bold tracking-tight mb-2 text-on-surface">JobMatchAI</h3>
+              <span class="text-primary font-label text-[10px] mb-4">MATCH_INTELIGENTE_DE_VAGAS</span>
+              <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                Solucao com IA para comparar perfis e oportunidades, priorizando aderencia tecnica e agilidade no processo de triagem.
+              </p>
+              <div class="bg-surface-container-highest/50 h-32 mb-6 border border-outline-variant/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-3xl text-cyan-500/20">neurology</span>
+              </div>
+              <a href="https://github.com/patrickcsouzadev/JobMatchAI" target="_blank" rel="noopener noreferrer" class="w-full border border-outline-variant text-on-surface-variant py-2 font-label text-[10px] hover:border-primary hover:text-primary transition-all text-center block">&gt; CODIGO_FONTE</a>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-12 bg-surface-container-low/40 backdrop-blur-md border-r-2 border-primary/10 relative" data-search-key="module-gensen" tabindex="-1">
+            <div class="absolute bottom-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_03</div>
+            <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="flex flex-col justify-center">
+                <h3 class="font-headline text-3xl font-bold tracking-tight mb-4 text-on-surface">GenSen - Gerenciador de Senhas</h3>
+                <p class="text-on-surface-variant leading-relaxed mb-6">
+                  Projeto voltado para seguranca e organizacao de credenciais, com interface objetiva para cadastro, consulta e gestao de senhas.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">SECURITY</span>
+                  <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">PASSWORD_MANAGER</span>
+                  <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">PRIVACIDADE</span>
+                </div>
+                <a href="https://github.com/patrickcsouzadev/GenSen---O-seu-gerenciador-de-senhas" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-2 font-label text-xs font-bold hover:bg-cyan-400 transition-all w-fit">&gt; CODIGO_FONTE</a>
+              </div>
+              <div class="relative group cursor-crosshair h-48 bg-surface-container-highest/30 border border-outline-variant/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-5xl text-cyan-500/20">lock</span>
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-label">ACESSO_PROTEGIDO</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-l-2 border-primary relative group overflow-hidden" data-search-key="module-gestfreelas" tabindex="-1">
+            <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_04</div>
+            <div class="p-8">
+              <h3 class="font-headline text-4xl font-bold tracking-tight mb-4 text-on-surface">GestFreelas</h3>
+              <div class="flex gap-2 mb-6">
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">REACT</span>
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">NODE_JS</span>
+                <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">POSTGRESQL</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <p class="text-on-surface-variant leading-relaxed">
+                  Motor de orquestracao descentralizado para gestao de freelancers em tempo real, com integridade transacional e verificacao automatizada de marcos.
+                </p>
+                <div class="h-48 bg-surface-container-highest/50 relative border border-outline-variant/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-5xl text-cyan-500/20">hub</span>
+                </div>
+              </div>
+              <div class="mt-8 flex gap-4">
+                <a href="https://github.com/patrickcsouzadev/gestfreelas" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 font-label text-xs font-bold hover:bg-cyan-400 transition-all">&gt; CODIGO_FONTE</a>
+                <a href="https://github.com/patrickcsouzadev/gestfreelas" target="_blank" rel="noopener noreferrer" class="border border-outline-variant text-on-surface-variant px-6 py-2 font-label text-xs hover:border-primary hover:text-primary transition-all">&gt; DEMONSTRACAO</a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md border-t-2 border-primary/20 relative group" data-search-key="module-todo" tabindex="-1">
+            <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_05</div>
+            <div class="p-8 flex flex-col h-full">
+              <h3 class="font-headline text-2xl font-bold tracking-tight mb-2 text-on-surface">App de Tarefas</h3>
+              <span class="text-primary font-label text-[10px] mb-4">MOTOR_DE_TAREFAS_OTIMIZADO</span>
+              <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                Gerenciador de tarefas minimalista com persistencia local para uso rapido e continuo.
+              </p>
+              <div class="bg-surface-container-highest/50 h-32 mb-6 border border-outline-variant/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-3xl text-cyan-500/20">checklist</span>
+              </div>
+              <a href="https://github.com/patrickcsouzadev/todo-app" target="_blank" rel="noopener noreferrer" class="w-full border border-outline-variant text-on-surface-variant py-2 font-label text-[10px] hover:border-primary hover:text-primary transition-all text-center block">&gt; CODIGO_FONTE</a>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md relative" data-search-key="module-topfilmes" tabindex="-1">
+            <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_06</div>
+            <div class="p-8">
+              <div class="w-12 h-12 border border-primary flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">movie</span>
+              </div>
+              <h3 class="font-headline text-2xl font-bold tracking-tight mb-2 text-on-surface">TopFilmesBrasil</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                Agregador cinematografico com sincronizacao em tempo real usando APIs de midia distribuidas.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-8">
+                <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">NEXT_JS</span>
+                <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">TMDB_API</span>
+                <span class="px-2 py-0.5 border border-outline-variant text-outline text-[9px] font-label">TAILWIND</span>
+              </div>
+              <a href="https://github.com/patrickcsouzadev/topfilmesc" target="_blank" rel="noopener noreferrer" class="text-primary font-label text-[10px] hover:underline underline-offset-4">&gt; CODIGO_FONTE</a>
+            </div>
+          </article>
+
+          
+          <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-r-2 border-primary/10 relative" data-search-key="module-portfolio" tabindex="-1">
+            <div class="absolute bottom-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_07</div>
+            <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="flex flex-col justify-center">
+                <h3 class="font-headline text-3xl font-bold tracking-tight mb-4 text-on-surface">PORTFOLIO_PESSOAL</h3>
+                <p class="text-on-surface-variant leading-relaxed mb-6">
+                  Esta interface: um sistema HUD assimetrico criado para alta performance e imersao visual com integracao de IA.
+                </p>
+                <div class="flex gap-4">
+                  <div class="flex flex-col">
+                    <span class="text-primary font-label text-lg font-bold">100%</span>
+                    <span class="text-outline text-[9px] font-label uppercase">Design_Original</span>
+                  </div>
+                  <div class="w-px h-8 bg-outline-variant/30"></div>
+                  <div class="flex flex-col">
+                    <span class="text-primary font-label text-lg font-bold">AI</span>
+                    <span class="text-outline text-[9px] font-label uppercase">Integrado</span>
+                  </div>
+                </div>
+                <a href="https://github.com/patrickcsouzadev/PORTIFOLIO" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-2 font-label text-xs font-bold hover:bg-cyan-400 transition-all w-fit mt-6">&gt; CODIGO_FONTE</a>
+              </div>
+              <div class="relative group cursor-crosshair h-48 bg-surface-container-highest/30 border border-outline-variant/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-5xl text-cyan-500/20">terminal</span>
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-label">DESCRIPTOGRAFAR_DADOS</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-outline-variant/10 pt-8 gap-8">
+          <div class="flex items-center gap-12">
+            <div class="text-[10px] font-label text-outline">
+              <span class="block text-primary/40 font-bold mb-1">PULSO_DE_LATENCIA</span>
+              <div class="flex gap-1 items-end h-6">
+                <div class="w-1 bg-primary/20 h-2"></div>
+                <div class="w-1 bg-primary/40 h-4"></div>
+                <div class="w-1 bg-primary h-6"></div>
+                <div class="w-1 bg-primary/60 h-3"></div>
+                <div class="w-1 bg-primary/30 h-5"></div>
+                <div class="w-1 bg-primary/50 h-2"></div>
+              </div>
+            </div>
+            <div class="text-[10px] font-label text-outline">
+              <span class="block text-primary/40 font-bold mb-1">COORDENADAS</span>
+              <span>23.9608 S 46.3339 W</span>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="text-[10px] font-label text-outline hover:text-primary transition-colors">GITHUB</a>
+            <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="text-[10px] font-label text-outline hover:text-primary transition-colors">LINKEDIN</a>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- Bloco de contato com formulario -->
+      <section id="contato" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div class="font-label text-primary text-xs mb-4 tracking-[0.3em]">INICIANDO_PROTOCOLO_DE_COMUNICACAO</div>
+              <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8">
+                CONTATO<br />
+                <span class="text-primary-container">DIRETO_</span>
+              </h2>
+              <p class="font-body text-on-surface-variant max-w-md leading-relaxed mb-12">
+                Envie sua mensagem por este terminal seguro. Solicitações de arquitetura, desenvolvimento e integrações são priorizadas.
+              </p>
+            </div>
+            <div class="space-y-6">
+              <div class="font-label text-[10px] text-outline tracking-widest uppercase mb-4 border-b border-outline-variant/30 pb-2">CANAIS_DE_CONTATO</div>
+              <a href="mailto:patrickcsouza.dev@outlook.com" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-email" tabindex="0">
+                <div class="text-primary-container">
+                  <span class="material-symbols-outlined">alternate_email</span>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-outline uppercase">EMAIL</div>
+                  <div class="font-headline font-medium text-on-surface text-sm">patrickcsouza.dev@outlook.com</div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-linkedin" tabindex="0">
+                <div class="text-primary-container">
+                  <span class="material-symbols-outlined">hub</span>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-outline uppercase">LINKEDIN</div>
+                  <div class="font-headline font-medium text-on-surface text-sm">/in/patrickcsouzadev</div>
+                </div>
+              </a>
+              <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-github" tabindex="0">
+                <div class="text-primary-container">
+                  <span class="material-symbols-outlined">terminal</span>
+                </div>
+                <div>
+                  <div class="font-label text-[10px] text-outline uppercase">GITHUB</div>
+                  <div class="font-headline font-medium text-on-surface text-sm">/patrickcsouzadev</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          
+          <div class="lg:col-span-7">
+            <div class="glass-panel corner-bracket p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-primary/10">
+              <div class="corner-bracket-inner"></div>
+              <div class="absolute inset-0 scanline opacity-20"></div>
+              <form id="contact-form" class="relative z-10 space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div class="space-y-2">
+                    <label class="font-label text-[10px] text-primary tracking-widest uppercase">NOME</label>
+                    <input name="nome" type="text" required class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-label text-sm py-2 placeholder:text-outline/40 focus:outline-none transition-all" placeholder="DIGITE_SEU_NOME..." />
+                  </div>
+                  <div class="space-y-2">
+                    <label class="font-label text-[10px] text-primary tracking-widest uppercase">EMAIL</label>
+                    <input name="email" type="email" required class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-label text-sm py-2 placeholder:text-outline/40 focus:outline-none transition-all" placeholder="SEUEMAIL@DOMINIO.COM" />
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="font-label text-[10px] text-primary tracking-widest uppercase">OBJETIVO_DA_MENSAGEM</label>
+                  <div class="flex flex-wrap gap-3 pt-2">
+                    <label class="cursor-pointer">
+                      <input class="hidden peer" name="objetivo" type="radio" value="ARQUITETURA_DE_SISTEMAS" />
+                      <span class="font-label text-[10px] border border-outline-variant px-3 py-1 peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container transition-all">ARQUITETURA</span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input class="hidden peer" name="objetivo" type="radio" value="DESIGN_DE_SISTEMA" />
+                      <span class="font-label text-[10px] border border-outline-variant px-3 py-1 peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container transition-all">DESIGN</span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input class="hidden peer" name="objetivo" type="radio" value="FLUXO_DE_DADOS" />
+                      <span class="font-label text-[10px] border border-outline-variant px-3 py-1 peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container transition-all">FLUXO_DE_DADOS</span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input class="hidden peer" name="objetivo" type="radio" value="COLABORACAO" />
+                      <span class="font-label text-[10px] border border-outline-variant px-3 py-1 peer-checked:bg-primary-container peer-checked:text-on-primary-container peer-checked:border-primary-container transition-all">COLABORACAO</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="font-label text-[10px] text-primary tracking-widest uppercase">MENSAGEM</label>
+                  <textarea name="mensagem" required rows="4" class="w-full bg-transparent border border-outline-variant/30 p-4 focus:border-primary text-on-surface font-label text-sm placeholder:text-outline/40 focus:outline-none transition-all resize-none" placeholder="DESCREVA_OS_DETALHES_DA_SUA_SOLICITACAO..."></textarea>
+                </div>
+                <div class="pt-4 flex justify-between items-center">
+                  <div class="font-label text-[8px] text-outline leading-none uppercase">
+                    SEGURANCA: RSA_4096_ATIVA<br />
+                    STATUS: PRONTO_PARA_ENVIO
+                  </div>
+                  <button type="submit" class="bg-primary-container text-on-primary-container px-8 py-3 font-label text-xs font-bold tracking-[0.2em] uppercase hover:brightness-110 active:scale-95 transition-all">
+                    ENVIAR_MENSAGEM
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="mt-8">
+              <div class="glass-panel p-4 flex items-center justify-between border border-white/5">
+                <span class="font-label text-[10px] text-outline">LOCAL: 23.9608 S, 46.3339 W // SANTOS, BR</span>
+                <div class="flex gap-2">
+                  <div class="w-1 h-1 bg-primary animate-pulse"></div>
+                  <div class="w-1 h-1 bg-primary/40"></div>
+                  <div class="w-1 h-1 bg-primary/20"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="w-full border-t border-cyan-500/5 bg-[#000510]/80 backdrop-blur-md mt-auto z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+          <div class="flex flex-col gap-2">
+            <div class="text-cyan-500 font-bold font-label text-[10px] uppercase tracking-widest">patrickcsouza.dev</div>
+            <div class="text-slate-600 font-label text-[10px] uppercase">&copy; 2025 PATRICK CARLOS SOUZA // SANTOS, BR</div>
+          </div>
+          <div class="flex gap-12 font-label text-[10px] uppercase">
+            <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-cyan-300 transition-colors duration-200">GITHUB</a>
+            <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-cyan-300 transition-colors duration-200">LINKEDIN</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="px-2 py-1 border border-cyan-500/20 font-label text-[8px] text-cyan-400">CRIPTOGRAFIA: AES_256</div>
+            <div class="px-2 py-1 border border-cyan-500/20 font-label text-[8px] text-green-400">CANAL: ATIVO</div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    
+    <nav id="mobile-nav" class="md:hidden fixed bottom-0 left-0 w-full bg-[#000510]/90 backdrop-blur-lg flex justify-around items-center py-4 z-50 border-t border-white/5">
+      <a href="#home" class="mobile-nav-link flex flex-col items-center text-slate-600 hover:text-cyan-300 transition-colors">
+        <span class="material-symbols-outlined">rocket_launch</span>
+        <span class="font-label text-[8px] mt-1">INICIO</span>
+      </a>
+      <a href="#sobre" class="mobile-nav-link flex flex-col items-center text-slate-600 hover:text-cyan-300 transition-colors">
+        <span class="material-symbols-outlined">database</span>
+        <span class="font-label text-[8px] mt-1">SOBRE</span>
+      </a>
+      <a href="#projetos" class="mobile-nav-link flex flex-col items-center text-slate-600 hover:text-cyan-300 transition-colors">
+        <span class="material-symbols-outlined">terminal</span>
+        <span class="font-label text-[8px] mt-1">PROJETOS</span>
+      </a>
+      <a href="#contato" class="mobile-nav-link flex flex-col items-center text-cyan-400">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
+        <span class="font-label text-[8px] mt-1">CONTATO</span>
+      </a>
+    </nav>
+
+    
+    <!-- Chat flutuante em estilo terminal -->
+    <div id="chatkit-container">
+      <button
+        id="chatkit-toggle-btn"
+        class="chatkit-float-btn"
+        aria-label="Abrir assistente em terminal"
+        aria-controls="chatkit-widget"
+        aria-expanded="false"
+        type="button"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
+      </button>
+
+      <section
+        id="chatkit-widget"
+        class="chatkit-widget-container"
+        aria-label="Terminal de conversa com assistente"
+      >
+        <header class="chatkit-header">
+          <div class="chatkit-title-wrap">
+            <span class="chatkit-title-dot" aria-hidden="true"></span>
+            <h3>patrick-assistant@linux</h3>
+          </div>
+          <button id="chatkit-close-btn" aria-label="Fechar terminal de chat" type="button">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </header>
+        <div id="chatkit-chat-area" class="chatkit-chat-area" role="log" aria-live="polite"></div>
+      </section>
+    </div>
+
+    
+    <!-- Scripts da pagina -->
+    <script src="static/script-search4.js?v=20260413-comments2"></script>
+    <script src="static/chatkit-integration.js?v=20260412-ptbr1"></script>
+  </body>
+</html>
+
