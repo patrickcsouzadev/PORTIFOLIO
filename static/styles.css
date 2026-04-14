@@ -473,6 +473,61 @@ body {
     color: #64748b !important;
 }
 
+@media (max-width: 767px) {
+    section {
+        scroll-margin-top: 78px;
+    }
+
+    .glass-panel {
+        backdrop-filter: blur(9px);
+        -webkit-backdrop-filter: blur(9px);
+    }
+
+    h1,
+    h2,
+    h3 {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .terminal-prose-hero,
+    .terminal-prose-main {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .terminal-prose-main p {
+        padding-left: 0.8rem;
+    }
+
+    #contato input,
+    #contato textarea {
+        font-size: 16px;
+    }
+
+    #mobile-nav {
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+
+    #mobile-nav .material-symbols-outlined {
+        font-size: 1.25rem;
+    }
+
+    #mobile-nav .font-label {
+        letter-spacing: 0.12em;
+    }
+}
+
+@media (max-width: 480px) {
+    .corner-bracket::before,
+    .corner-bracket::after,
+    .corner-bracket-inner::before,
+    .corner-bracket-inner::after {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 /* Estilo do widget de chat em modo terminal Linux. */
 #chatkit-container {
     position: fixed;

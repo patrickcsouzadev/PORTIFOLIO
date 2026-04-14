@@ -86,7 +86,7 @@
       }
     </script>
 
-    <link rel="stylesheet" href="static/styles.css?v=20260412-terminal-font2" />
+    <link rel="stylesheet" href="static/styles.css?v=20260414-mobile-fix1" />
   </head>
 
   <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden font-body">
@@ -116,18 +116,18 @@
 
     
     <!-- Navegacao do topo -->
-    <nav class="fixed top-0 w-full z-50 border-b border-cyan-500/10 bg-[#000510]/60 backdrop-blur-xl flex justify-between items-center px-8 h-16 shadow-[0_0_40px_rgba(12,159,250,0.05)]">
-      <div class="font-headline font-bold tracking-tighter text-cyan-500">patrickcsouza.dev</div>
+    <nav class="fixed top-0 w-full z-50 border-b border-cyan-500/10 bg-[#000510]/60 backdrop-blur-xl flex justify-between items-center px-4 sm:px-6 md:px-8 h-16 shadow-[0_0_40px_rgba(12,159,250,0.05)]">
+      <div class="font-headline font-bold tracking-tighter text-cyan-500 text-xl sm:text-2xl">patrickcsouza.dev</div>
       <div id="top-nav" class="hidden md:flex items-center gap-8 font-headline uppercase tracking-tighter text-sm">
         <a class="top-nav-link text-cyan-400 border-b-2 border-cyan-500 pb-1 transition-colors" href="#home">INICIO</a>
         <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#sobre">SOBRE</a>
         <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#projetos">PROJETOS</a>
         <a class="top-nav-link text-slate-500 hover:text-cyan-300 transition-colors border-b-2 border-transparent pb-1" href="#contato">CONTATO</a>
       </div>
-      <div class="flex items-center gap-4">
-        <button class="material-symbols-outlined text-slate-500 hover:text-cyan-300 transition-all cursor-pointer">settings_input_component</button>
+      <div class="flex items-center gap-2 sm:gap-4">
+        <button class="hidden sm:block material-symbols-outlined text-slate-500 hover:text-cyan-300 transition-all cursor-pointer">settings_input_component</button>
         <button class="material-symbols-outlined text-slate-500 hover:text-cyan-300 transition-all cursor-pointer">terminal</button>
-        <a href="#contato" class="bg-primary text-on-primary px-4 py-1 font-headline uppercase tracking-tighter text-sm font-bold transition-all hover:bg-primary-container active:scale-95">FALAR_AGORA</a>
+        <a href="#contato" class="bg-primary text-on-primary px-3 sm:px-4 py-2 sm:py-1 font-headline uppercase tracking-tight sm:tracking-tighter text-xs sm:text-sm font-bold transition-all hover:bg-primary-container active:scale-95">FALAR_AGORA</a>
       </div>
     </nav>
 
@@ -167,41 +167,41 @@
       </div>
     </aside>
 
-    <main class="min-h-screen pt-16 lg:pl-20 relative flex flex-col">
+    <main class="min-h-screen pt-16 pb-24 md:pb-0 lg:pl-20 relative flex flex-col">
 
       
       <!-- Bloco inicial com apresentacao e busca -->
-      <section id="home" class="relative z-10 min-h-[90vh] flex flex-col justify-center px-12 md:px-24 py-24 border-b border-cyan-500/5 overflow-hidden">
+      <section id="home" class="relative z-10 min-h-[88vh] flex flex-col justify-center px-5 sm:px-8 md:px-24 py-16 sm:py-20 md:py-24 border-b border-cyan-500/5 overflow-hidden">
 
         
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-[55%] h-full opacity-40 md:opacity-70 pointer-events-none z-0">
+        <div class="absolute right-[-12%] sm:right-[-6%] md:right-0 top-1/2 -translate-y-1/2 w-[120%] sm:w-[108%] md:w-[55%] h-full opacity-24 sm:opacity-32 md:opacity-70 pointer-events-none z-0">
           <img src="imagens/imganimada.jpeg" alt="Patrick Carlos Souza"
                class="w-full h-full object-contain illustration-mask scale-110" />
         </div>
 
         
         <div class="z-10 max-w-4xl relative">
-          <p class="font-label text-cyan-500 text-sm mb-6 tracking-[0.2em]">IDENT_01 // PERFIL_PROFISSIONAL</p>
+          <p class="font-label text-cyan-500 text-xs sm:text-sm mb-4 sm:mb-6 tracking-[0.15em] sm:tracking-[0.2em]">IDENT_01 // PERFIL_PROFISSIONAL</p>
 
-          <h1 class="font-headline font-bold text-7xl md:text-9xl tracking-tighter uppercase leading-none mb-8">
+          <h1 class="font-headline font-bold text-[64px] sm:text-7xl md:text-9xl tracking-tighter uppercase leading-[0.92] mb-6 sm:mb-8">
             PATRICK<br/>
             <span class="text-cyan-500/40">ENGINEER</span>
           </h1>
 
           
-          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-10 max-w-lg">
+          <div class="flex flex-col md:flex-row md:items-center gap-3 sm:gap-4 mb-8 sm:mb-10 max-w-lg">
             <div class="h-[2px] w-12 bg-primary shrink-0"></div>
-            <p class="font-headline text-lg md:text-xl text-secondary font-light tracking-tight italic">
+            <p class="font-headline text-xl sm:text-lg md:text-xl text-secondary font-light tracking-tight italic">
               Full Stack Engineer // Back-End Specialist
             </p>
           </div>
 
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
-            <p class="terminal-prose terminal-prose-hero border-l-2 border-cyan-500/40 pl-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-end">
+            <p class="terminal-prose terminal-prose-hero border-l-2 border-cyan-500/40 pl-4 sm:pl-6">
               Desenvolvedor Full Stack com especialização em Back-End — Graduado em Análise e Desenvolvimento de Sistemas pela FATEC Rubens Lara (Santos-SP).
             </p>
-            <div class="font-label text-[10px] text-slate-500 space-y-1">
+            <div class="font-label text-[9px] sm:text-[10px] text-slate-500 space-y-1">
               <p>LAT: -23.9608 | LNG: -46.3339</p>
               <p>VERSAO_BUILD: 4.2.0_ESTAVEL</p>
               <p>STACK_TEC: JAVA_SE // SPRING // AWS</p>
@@ -210,23 +210,23 @@
         </div>
 
         
-        <div class="max-w-4xl w-full mt-16 relative z-10">
+        <div class="max-w-4xl w-full mt-10 sm:mt-16 relative z-10">
           <div class="relative group">
             <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-primary/40"></div>
             <div class="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-primary/40"></div>
             <div class="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-primary/40"></div>
             <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-primary/40"></div>
             <div class="flex items-center bg-surface-container-lowest border border-primary/20 focus-within:border-primary focus-within:shadow-[0_0_20px_rgba(12,159,250,0.2)] transition-all duration-300">
-              <div class="pl-6 flex items-center gap-3 text-primary/60 shrink-0">
+              <div class="pl-3 sm:pl-6 flex items-center gap-2 sm:gap-3 text-primary/60 shrink-0">
                 <span class="material-symbols-outlined">terminal</span>
                 <span class="font-label text-sm hidden sm:inline">PATRICK@LINUX:~$</span>
               </div>
               <input id="hero-search"
-                     class="flex-1 bg-transparent border-none text-primary placeholder:text-slate-700 font-label text-sm py-5 px-4 focus:ring-0 focus:outline-none"
+                     class="flex-1 bg-transparent border-none text-primary placeholder:text-slate-700 font-label text-xs sm:text-sm py-4 sm:py-5 px-3 sm:px-4 focus:ring-0 focus:outline-none"
                      placeholder="BUSCAR_PROJETOS_OU_STACK..."
                      type="text"
                      autocomplete="off" />
-              <div class="pr-6 flex items-center gap-4 shrink-0">
+              <div class="pr-3 sm:pr-6 flex items-center gap-2 sm:gap-4 shrink-0">
                 <span class="font-label text-[10px] text-slate-600 hidden md:block">BUSCAR</span>
                 <button id="search-btn" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">search</button>
               </div>
@@ -234,7 +234,7 @@
           </div>
           
           <div id="search-hint" class="hidden mt-3 px-2 font-label text-[10px] text-primary/70"></div>
-          <div class="flex gap-6 mt-4 flex-wrap">
+          <div class="flex gap-x-5 gap-y-2 mt-4 flex-wrap">
             <span class="text-[10px] font-label text-slate-600">BUSCAS_POPULARES:</span>
             <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">PYTHON</button>
             <button class="search-tag text-[10px] font-label text-primary/60 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">JAVA</button>
@@ -247,14 +247,14 @@
 
       
       <!-- Bloco sobre mim e experiencias -->
-      <section id="sobre" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
+      <section id="sobre" class="py-16 sm:py-20 md:py-24 px-5 sm:px-8 md:px-24 relative z-10 border-t border-cyan-500/5">
         
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
           
-          <div class="md:col-span-8 glass-panel corner-bracket p-10 flex flex-col justify-between min-h-[400px]" data-search-key="core-systems" tabindex="-1">
+          <div class="md:col-span-8 glass-panel corner-bracket p-5 sm:p-8 md:p-10 flex flex-col justify-between min-h-[360px] sm:min-h-[400px]" data-search-key="core-systems" tabindex="-1">
             <div class="flex flex-col md:flex-row gap-8">
               <div class="flex-grow">
-                <h2 class="font-headline text-4xl font-bold uppercase mb-6 tracking-tighter">CORE_PRINCIPLES</h2>
+                <h2 class="font-headline text-3xl sm:text-4xl font-bold uppercase mb-6 tracking-tighter">CORE_PRINCIPLES</h2>
                 <div class="terminal-prose terminal-prose-main space-y-4 max-w-xl">
                   <p>💻 Stack Tecnológica: Experiência sólida em Java (Spring Boot) e Python (Django, FastAPI, Flask), além de domínio em HTML5, CSS3, Tailwind CSS, JavaScript (ES6+), MySQL, Git e GitHub. Atuação no desenvolvimento de APIs, sistemas web e aplicações escaláveis.</p>
                   <p>🚀 Aperfeiçoamento Contínuo: Evoluindo em arquitetura de sistemas, AWS Cloud, DevOps e testes automatizados, com foco em aplicações robustas e de alta performance.</p>
@@ -275,7 +275,7 @@
           </div>
 
           
-          <div class="md:col-span-4 glass-panel corner-bracket h-[400px] overflow-hidden flex items-center justify-center relative">
+          <div class="md:col-span-4 glass-panel corner-bracket h-[320px] sm:h-[380px] md:h-[400px] overflow-hidden flex items-center justify-center relative">
             <div class="orbital-tech-zone" aria-label="Stack em orbita">
               <div class="orbital-tech-core">
                 <span class="orbital-tech-core-title">STACK</span>
@@ -340,7 +340,7 @@
           </div>
 
           
-          <div class="md:col-span-4 glass-panel corner-bracket h-[300px] p-6 flex flex-col justify-between">
+          <div class="md:col-span-4 glass-panel corner-bracket h-[240px] sm:h-[300px] p-5 sm:p-6 flex flex-col justify-between">
             <span class="material-symbols-outlined text-cyan-500 text-4xl">schema</span>
             <div class="space-y-2">
               <h3 class="font-headline font-bold text-xl uppercase tracking-tighter">FLUXO_DE_DADOS</h3>
@@ -349,7 +349,7 @@
           </div>
 
           
-          <div class="md:col-span-8 glass-panel corner-bracket h-[300px] bg-surface-container-lowest/70 p-6 font-label text-xs text-cyan-500/80 overflow-hidden relative border border-cyan-500/10">
+          <div class="md:col-span-8 glass-panel corner-bracket h-[240px] sm:h-[300px] bg-surface-container-lowest/70 p-5 sm:p-6 font-label text-[11px] sm:text-xs text-cyan-500/80 overflow-hidden relative border border-cyan-500/10">
             <div class="scanline"></div>
             <p class="mb-1">&gt; INICIALIZANDO_DIAGNOSTICO_DO_SISTEMA...</p>
             <p class="mb-1">&gt; MOTOR_PRINCIPAL: SPRING_BOOT_v3.2</p>
@@ -362,39 +362,39 @@
         </div>
 
         
-        <div class="mt-24">
-          <h2 class="font-headline text-5xl md:text-6xl font-bold uppercase mb-20 tracking-tighter">MISSION_HISTORY</h2>
-          <div class="space-y-16">
+        <div class="mt-16 sm:mt-24">
+          <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl font-bold uppercase mb-12 sm:mb-20 tracking-tighter">MISSION_HISTORY</h2>
+          <div class="space-y-12 sm:space-y-16">
 
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start group">
               <div class="md:col-span-3 font-label">
                 <p class="text-cyan-500 text-sm font-bold">MISSAO_01</p>
                 <p class="text-slate-500 text-xs">NOV 2025 &mdash; O MOMENTO</p>
                 <p class="text-slate-600 text-[10px] mt-2">SAO_PAULO_BRASIL // HIBRIDO</p>
               </div>
-              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-fgv" tabindex="-1">
-                <div class="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">FUNDACAO_GETULIO_VARGAS</h3>
-                    <p class="text-cyan-400 font-label text-sm">ENGENHEIRO_DE_SOFTWARE_FULL_STACK (JAVA_PYTHON)</p>
+              <div class="md:col-span-9 glass-panel corner-bracket p-5 sm:p-8 md:p-10 group-hover:bg-cyan-500/5 transition-all duration-500 min-w-0" data-search-key="mission-fgv" tabindex="-1">
+                <div class="flex justify-between items-start gap-3 mb-6 min-w-0">
+                  <div class="min-w-0">
+                    <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase tracking-tighter break-words">FUNDACAO_GETULIO_VARGAS</h3>
+                    <p class="text-cyan-400 font-label text-xs sm:text-sm break-words">ENGENHEIRO_DE_SOFTWARE_FULL_STACK (JAVA_PYTHON)</p>
                   </div>
-                  <span class="material-symbols-outlined text-slate-700">deployed_code</span>
+                  <span class="material-symbols-outlined text-slate-700 shrink-0">deployed_code</span>
                 </div>
-                <ul class="font-body text-slate-300 space-y-4 mb-8">
-                  <li class="flex gap-4">
+                <ul class="font-body text-slate-300 text-sm sm:text-base space-y-4 mb-8">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Arquitetura e desenvolvimento de solucoes com Java (Spring Boot) e Python para integracoes de alta escala, reduzindo fluxos operacionais de meses para minutos.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Integracao segura via OAuth 2.0 com plataformas corporativas (incluindo Salesforce Marketing Cloud), automatizando upload, taxonomia e roteamento inteligente de ativos digitais.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Construcao de pipelines GenAI com OpenAI para geracao em escala de HTML responsivo, SMS, WhatsApp e conteudo informativo, com guardrails e validacoes de regra de negocio.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Orquestracao de automacoes com n8n e Power Automate, evolucao de dashboards internos e praticas de DevOps com Git/GitHub e Docker para deploy seguro e escalavel.
                   </li>
@@ -413,34 +413,34 @@
             </div>
 
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start group">
               <div class="md:col-span-3 font-label">
                 <p class="text-cyan-500 text-sm font-bold">MISSAO_02</p>
                 <p class="text-slate-500 text-xs">FEV 2024 &mdash; MAI 2025</p>
                 <p class="text-slate-600 text-[10px] mt-2">SANTOS_SP // PRESENCIAL</p>
               </div>
-              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-soc" tabindex="-1">
-                <div class="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">SOC</h3>
-                    <p class="text-cyan-400 font-label text-sm">ANALISTA_DE_CREDENCIAMENTO</p>
+              <div class="md:col-span-9 glass-panel corner-bracket p-5 sm:p-8 md:p-10 group-hover:bg-cyan-500/5 transition-all duration-500 min-w-0" data-search-key="mission-soc" tabindex="-1">
+                <div class="flex justify-between items-start gap-3 mb-6 min-w-0">
+                  <div class="min-w-0">
+                    <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase tracking-tighter break-words">SOC</h3>
+                    <p class="text-cyan-400 font-label text-xs sm:text-sm break-words">ANALISTA_DE_CREDENCIAMENTO</p>
                   </div>
-                  <span class="material-symbols-outlined text-slate-700">support_agent</span>
+                  <span class="material-symbols-outlined text-slate-700 shrink-0">support_agent</span>
                 </div>
-                <ul class="font-body text-slate-300 space-y-4 mb-8">
-                  <li class="flex gap-4">
+                <ul class="font-body text-slate-300 text-sm sm:text-base space-y-4 mb-8">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Suporte tecnico especializado a usuarios de sistemas corporativos, elevando usabilidade e eficiencia operacional por meio de atendimento consultivo e resolutivo.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Identificacao, reproducao e reporte estruturado de bugs para o time de desenvolvimento, com apoio em homologacao de melhorias e novas funcionalidades.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Conducao de treinamentos para usuarios finais, documentacao de processos, guias e FAQ para acelerar onboarding e reduzir erros recorrentes.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Intermediacao entre areas de negocio e equipe tecnica, priorizando ajustes com base em impacto operacional e experiencia do usuario.
                   </li>
@@ -456,34 +456,34 @@
             </div>
 
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 items-start group">
               <div class="md:col-span-3 font-label">
                 <p class="text-cyan-500 text-sm font-bold">MISSAO_03</p>
                 <p class="text-slate-500 text-xs">JUN 2022 &mdash; FEV 2024</p>
                 <p class="text-slate-600 text-[10px] mt-2">SANTOS_SP // PRESENCIAL</p>
               </div>
-              <div class="md:col-span-9 glass-panel corner-bracket p-10 group-hover:bg-cyan-500/5 transition-all duration-500" data-search-key="mission-gmreis" tabindex="-1">
-                <div class="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">GMREIS</h3>
-                    <p class="text-cyan-400 font-label text-sm">INSPETOR_DE_CONTROLE_E_GARANTIA_DA_QUALIDADE</p>
+              <div class="md:col-span-9 glass-panel corner-bracket p-5 sm:p-8 md:p-10 group-hover:bg-cyan-500/5 transition-all duration-500 min-w-0" data-search-key="mission-gmreis" tabindex="-1">
+                <div class="flex justify-between items-start gap-3 mb-6 min-w-0">
+                  <div class="min-w-0">
+                    <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase tracking-tighter break-words">GMREIS</h3>
+                    <p class="text-cyan-400 font-label text-xs sm:text-sm break-words">INSPETOR_DE_CONTROLE_E_GARANTIA_DA_QUALIDADE</p>
                   </div>
-                  <span class="material-symbols-outlined text-slate-700">inventory_2</span>
+                  <span class="material-symbols-outlined text-slate-700 shrink-0">inventory_2</span>
                 </div>
-                <ul class="font-body text-slate-300 space-y-4 mb-8">
-                  <li class="flex gap-4">
+                <ul class="font-body text-slate-300 text-sm sm:text-base space-y-4 mb-8">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Inspecao de produtos, servicos e documentacoes com foco em conformidade, rastreabilidade e confiabilidade dos processos de qualidade.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Atuacao em melhoria continua, auditoria e controle de estoque, assegurando aderencia aos requisitos regulatorios e ao sistema de gestao da qualidade.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Responsabilidade por rotinas administrativas, emissao e recebimento de notas fiscais, expedicao de consignado e elaboracao de planilhas gerenciais.
                   </li>
-                  <li class="flex gap-4">
+                  <li class="flex gap-3 sm:gap-4">
                     <span class="text-cyan-500 font-bold mt-1 text-xs shrink-0">//</span>
                     Follow-up com clientes e suporte logistico de equipe para manter padrao de excelencia, pontualidade e satisfacao no servico prestado.
                   </li>
@@ -504,13 +504,13 @@
 
       
       <!-- Bloco com os projetos e links de repositorio -->
-      <section id="projetos" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
-        <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <section id="projetos" class="py-16 sm:py-20 md:py-24 px-5 sm:px-8 md:px-24 relative z-10 border-t border-cyan-500/5">
+        <header class="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <h2 class="font-label text-primary text-sm tracking-[0.3em] mb-2">// FLUXO_DE_DADOS_PRONTO</h2>
-            <h1 class="font-headline font-extrabold text-6xl tracking-tighter uppercase">ENGINEERING_MODULES</h1>
+            <h1 class="font-headline font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tighter uppercase">ENGINEERING_MODULES</h1>
           </div>
-          <div class="font-label text-[10px] text-outline flex flex-col items-end">
+          <div class="font-label text-[10px] text-outline flex flex-col items-start md:items-end">
             <span>STATUS_DO_SISTEMA: NOMINAL</span>
             <span>BUFFER_ATIVO: 0x294F_A2</span>
           </div>
@@ -520,8 +520,8 @@
           
           <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-l-2 border-primary relative group overflow-hidden" data-search-key="module-cinetracker" tabindex="-1">
             <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_01</div>
-            <div class="p-8">
-              <h3 class="font-headline text-4xl font-bold tracking-tight mb-4 text-on-surface">CineTracker</h3>
+            <div class="p-5 sm:p-8">
+              <h3 class="font-headline text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-on-surface">CineTracker</h3>
               <div class="flex flex-wrap gap-2 mb-6">
                 <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">CATALOGO_DE_FILMES</span>
                 <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">TRACKING_PESSOAL</span>
@@ -544,7 +544,7 @@
           
           <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md border-t-2 border-primary/20 relative group" data-search-key="module-jobmatchai" tabindex="-1">
             <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_02</div>
-            <div class="p-8 flex flex-col h-full">
+            <div class="p-5 sm:p-8 flex flex-col h-full">
               <h3 class="font-headline text-2xl font-bold tracking-tight mb-2 text-on-surface">JobMatchAI</h3>
               <span class="text-primary font-label text-[10px] mb-4">MATCH_INTELIGENTE_DE_VAGAS</span>
               <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
@@ -560,7 +560,7 @@
           
           <article class="md:col-span-12 bg-surface-container-low/40 backdrop-blur-md border-r-2 border-primary/10 relative" data-search-key="module-gensen" tabindex="-1">
             <div class="absolute bottom-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_03</div>
-            <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div class="flex flex-col justify-center">
                 <h3 class="font-headline text-3xl font-bold tracking-tight mb-4 text-on-surface">GenSen - Gerenciador de Senhas</h3>
                 <p class="text-on-surface-variant leading-relaxed mb-6">
@@ -585,8 +585,8 @@
           
           <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-l-2 border-primary relative group overflow-hidden" data-search-key="module-gestfreelas" tabindex="-1">
             <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_04</div>
-            <div class="p-8">
-              <h3 class="font-headline text-4xl font-bold tracking-tight mb-4 text-on-surface">GestFreelas</h3>
+            <div class="p-5 sm:p-8">
+              <h3 class="font-headline text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-on-surface">GestFreelas</h3>
               <div class="flex gap-2 mb-6">
                 <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">REACT</span>
                 <span class="px-2 py-0.5 bg-secondary-container text-primary text-[10px] font-label">NODE_JS</span>
@@ -610,7 +610,7 @@
           
           <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md border-t-2 border-primary/20 relative group" data-search-key="module-todo" tabindex="-1">
             <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_05</div>
-            <div class="p-8 flex flex-col h-full">
+            <div class="p-5 sm:p-8 flex flex-col h-full">
               <h3 class="font-headline text-2xl font-bold tracking-tight mb-2 text-on-surface">App de Tarefas</h3>
               <span class="text-primary font-label text-[10px] mb-4">MOTOR_DE_TAREFAS_OTIMIZADO</span>
               <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
@@ -626,7 +626,7 @@
           
           <article class="md:col-span-4 bg-surface-container-low/40 backdrop-blur-md relative" data-search-key="module-topfilmes" tabindex="-1">
             <div class="absolute top-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_06</div>
-            <div class="p-8">
+            <div class="p-5 sm:p-8">
               <div class="w-12 h-12 border border-primary flex items-center justify-center mb-6">
                 <span class="material-symbols-outlined text-primary">movie</span>
               </div>
@@ -646,13 +646,13 @@
           
           <article class="md:col-span-8 bg-surface-container-low/40 backdrop-blur-md border-r-2 border-primary/10 relative" data-search-key="module-portfolio" tabindex="-1">
             <div class="absolute bottom-0 right-0 p-2 font-label text-[10px] text-primary/40">MODULO_07</div>
-            <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div class="flex flex-col justify-center">
                 <h3 class="font-headline text-3xl font-bold tracking-tight mb-4 text-on-surface">PORTFOLIO_PESSOAL</h3>
                 <p class="text-on-surface-variant leading-relaxed mb-6">
                   Esta interface: um sistema HUD assimetrico criado para alta performance e imersao visual com integracao de IA.
                 </p>
-                <div class="flex gap-4">
+                <div class="flex gap-3 sm:gap-4">
                   <div class="flex flex-col">
                     <span class="text-primary font-label text-lg font-bold">100%</span>
                     <span class="text-outline text-[9px] font-label uppercase">Design_Original</span>
@@ -676,8 +676,8 @@
         </div>
 
         
-        <div class="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-outline-variant/10 pt-8 gap-8">
-          <div class="flex items-center gap-12">
+        <div class="mt-12 flex flex-col md:flex-row items-start md:items-center justify-between border-t border-outline-variant/10 pt-8 gap-8">
+          <div class="flex items-center gap-8 sm:gap-12">
             <div class="text-[10px] font-label text-outline">
               <span class="block text-primary/40 font-bold mb-1">PULSO_DE_LATENCIA</span>
               <div class="flex gap-1 items-end h-6">
@@ -703,13 +703,13 @@
 
       
       <!-- Bloco de contato com formulario -->
-      <section id="contato" class="py-24 px-12 md:px-24 relative z-10 border-t border-cyan-500/5">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section id="contato" class="py-16 sm:py-20 md:py-24 px-5 sm:px-8 md:px-24 relative z-10 border-t border-cyan-500/5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12">
           
           <div class="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div class="font-label text-primary text-xs mb-4 tracking-[0.3em]">INICIANDO_PROTOCOLO_DE_COMUNICACAO</div>
-              <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8">
+              <h2 class="font-headline text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-8">
                 CONTATO<br />
                 <span class="text-primary-container">DIRETO_</span>
               </h2>
@@ -719,7 +719,7 @@
             </div>
             <div class="space-y-6">
               <div class="font-label text-[10px] text-outline tracking-widest uppercase mb-4 border-b border-outline-variant/30 pb-2">CANAIS_DE_CONTATO</div>
-              <a href="mailto:patrickcsouza.dev@outlook.com" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-email" tabindex="0">
+              <a href="mailto:patrickcsouza.dev@outlook.com" class="group relative z-10 pointer-events-auto flex items-center gap-4 sm:gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-email" tabindex="0">
                 <div class="text-primary-container">
                   <span class="material-symbols-outlined">alternate_email</span>
                 </div>
@@ -728,7 +728,7 @@
                   <div class="font-headline font-medium text-on-surface text-sm">patrickcsouza.dev@outlook.com</div>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-linkedin" tabindex="0">
+              <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-4 sm:gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-linkedin" tabindex="0">
                 <div class="text-primary-container">
                   <span class="material-symbols-outlined">hub</span>
                 </div>
@@ -737,7 +737,7 @@
                   <div class="font-headline font-medium text-on-surface text-sm">/in/patrickcsouzadev</div>
                 </div>
               </a>
-              <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-github" tabindex="0">
+              <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="group relative z-10 pointer-events-auto flex items-center gap-4 sm:gap-6 p-4 glass-panel border border-white/5 hover:border-primary/20 transition-all cursor-pointer" data-search-key="contact-github" tabindex="0">
                 <div class="text-primary-container">
                   <span class="material-symbols-outlined">terminal</span>
                 </div>
@@ -751,11 +751,11 @@
 
           
           <div class="lg:col-span-7">
-            <div class="glass-panel corner-bracket p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-primary/10">
+            <div class="glass-panel corner-bracket p-5 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-primary/10">
               <div class="corner-bracket-inner"></div>
               <div class="absolute inset-0 scanline opacity-20"></div>
-              <form id="contact-form" class="relative z-10 space-y-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <form id="contact-form" class="relative z-10 space-y-8 sm:space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-10">
                   <div class="space-y-2">
                     <label class="font-label text-[10px] text-primary tracking-widest uppercase">NOME</label>
                     <input name="nome" type="text" required class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-label text-sm py-2 placeholder:text-outline/40 focus:outline-none transition-all" placeholder="DIGITE_SEU_NOME..." />
@@ -790,20 +790,20 @@
                   <label class="font-label text-[10px] text-primary tracking-widest uppercase">MENSAGEM</label>
                   <textarea name="mensagem" required rows="4" class="w-full bg-transparent border border-outline-variant/30 p-4 focus:border-primary text-on-surface font-label text-sm placeholder:text-outline/40 focus:outline-none transition-all resize-none" placeholder="DESCREVA_OS_DETALHES_DA_SUA_SOLICITACAO..."></textarea>
                 </div>
-                <div class="pt-4 flex justify-between items-center">
+                <div class="pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div class="font-label text-[8px] text-outline leading-none uppercase">
                     SEGURANCA: RSA_4096_ATIVA<br />
                     STATUS: PRONTO_PARA_ENVIO
                   </div>
-                  <button type="submit" class="bg-primary-container text-on-primary-container px-8 py-3 font-label text-xs font-bold tracking-[0.2em] uppercase hover:brightness-110 active:scale-95 transition-all">
+                  <button type="submit" class="w-full sm:w-auto bg-primary-container text-on-primary-container px-6 sm:px-8 py-3 font-label text-xs font-bold tracking-[0.18em] sm:tracking-[0.2em] uppercase hover:brightness-110 active:scale-95 transition-all">
                     ENVIAR_MENSAGEM
                   </button>
                 </div>
               </form>
             </div>
             <div class="mt-8">
-              <div class="glass-panel p-4 flex items-center justify-between border border-white/5">
-                <span class="font-label text-[10px] text-outline">LOCAL: 23.9608 S, 46.3339 W // SANTOS, BR</span>
+              <div class="glass-panel p-4 flex items-center justify-between gap-4 border border-white/5">
+                <span class="font-label text-[10px] text-outline break-words">LOCAL: 23.9608 S, 46.3339 W // SANTOS, BR</span>
                 <div class="flex gap-2">
                   <div class="w-1 h-1 bg-primary animate-pulse"></div>
                   <div class="w-1 h-1 bg-primary/40"></div>
@@ -817,12 +817,12 @@
 
       
       <footer class="w-full border-t border-cyan-500/5 bg-[#000510]/80 backdrop-blur-md mt-auto z-10">
-        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center px-5 sm:px-8 md:px-12 py-10 md:py-16 w-full gap-8">
           <div class="flex flex-col gap-2">
             <div class="text-cyan-500 font-bold font-label text-[10px] uppercase tracking-widest">patrickcsouza.dev</div>
             <div class="text-slate-600 font-label text-[10px] uppercase">&copy; 2025 PATRICK CARLOS SOUZA // SANTOS, BR</div>
           </div>
-          <div class="flex gap-12 font-label text-[10px] uppercase">
+          <div class="flex gap-8 sm:gap-12 font-label text-[10px] uppercase">
             <a href="https://github.com/patrickcsouzadev" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-cyan-300 transition-colors duration-200">GITHUB</a>
             <a href="https://www.linkedin.com/in/patrickcsouzadev/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-cyan-300 transition-colors duration-200">LINKEDIN</a>
           </div>
@@ -836,7 +836,7 @@
     </main>
 
     
-    <nav id="mobile-nav" class="md:hidden fixed bottom-0 left-0 w-full bg-[#000510]/90 backdrop-blur-lg flex justify-around items-center py-4 z-50 border-t border-white/5">
+    <nav id="mobile-nav" class="md:hidden fixed bottom-0 left-0 w-full bg-[#000510]/90 backdrop-blur-lg flex justify-around items-center py-3 z-50 border-t border-white/5">
       <a href="#home" class="mobile-nav-link flex flex-col items-center text-slate-600 hover:text-cyan-300 transition-colors">
         <span class="material-symbols-outlined">rocket_launch</span>
         <span class="font-label text-[8px] mt-1">INICIO</span>
@@ -893,4 +893,3 @@
     <script src="static/chatkit-integration.js?v=20260412-ptbr1"></script>
   </body>
 </html>
-
